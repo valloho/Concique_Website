@@ -42,7 +42,7 @@ li {
 
 .menu {
     display: flex;
-    gap: 1em;
+    gap: 25px;
     font-size: 18px;
 }
 
@@ -53,6 +53,14 @@ li {
 
 .menu li {
     padding: 5px 14px;
+}
+
+#open_close1, #open_close2, #open_close3, #open_close4 {
+    visibility: hidden;
+}
+
+#open_close3 {
+    color: #FFFFFF;
 }
 
 .categories {
