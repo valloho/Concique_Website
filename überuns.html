@@ -2,9 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Über Uns</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="überuns.css">
 </head>
 <body>
-
+<header>
+    <nav class="navbar">
+        <img src="images/concique_logo.png" alt="Concique_Logo">
+        <div class="logo">Concique</div>
+        <ul class="nav-links">
+            <input type="checkbox" id="checkbox_toggle"/>
+            <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+            <div class="menu">
+                <li><a href="/">Entdecken</a></li>
+                <li><a href="/">Suche</a></li>
+                <li><a href="/">Über Uns</a></li>
+                <li class="categories">
+                    <!-- Wird später mit JavaScript ersetzt! -->
+                    <a href="/" id="dropdown_categories">Club &#9660;</a>
+                    <ul class="dropdown">
+                        <li><a href="/" id="dropdown_color1">Bar</a></li>
+                        <li><a href="/" id="dropdown_color2">Event Locations</a></li>
+                        <li><a href="/" id="dropdown_color3">Other</a></li>
+                    </ul>
+                </li>
+                <li><a href="/">&#9587;</a></li>
+            </div>
+        </ul>
+    </nav>
+</header>
 </body>
 </html>
