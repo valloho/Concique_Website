@@ -14,6 +14,10 @@ header img {
     height: 90px;
 }
 
+main {
+    padding: 20px;
+}
+
 a {
     text-decoration: none;
 }
@@ -38,11 +42,14 @@ li {
 
 .logo {
     font-size: 34px;
+    text-align: center;
+    position: fixed;
+    left: 80px;
 }
 
 .menu {
     display: flex;
-    gap: 25px;
+    gap: 17px;
     font-size: 18px;
 }
 
@@ -112,6 +119,42 @@ dann einfach so gemacht haha
     display: block;
 }
 
+.about {
+    text-align: center;
+    background-color: #A7BFD5;
+    padding: 30px;
+    margin: 30px;
+    border-style: solid;
+    border-radius: 5px;
+    border-color: #A7BFD5;
+}
+
+#about_h1 {
+    padding: 10px;
+}
+
+#about_description {
+    background-color: #000;
+    padding: 30px;
+    margin: 30px;
+    color: #A7BFD5;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: #000;
+}
+
+#about_table {
+    width: 100%;
+    font-size: 30px;
+}
+
+#about_text {
+    text-align: left;
+    padding: 20px;
+    margin: 15px;
+    color: #09262F;
+}
+
 @media (min-width: 768px) {
 
     .menu-btn {
@@ -168,10 +211,11 @@ dann einfach so gemacht haha
         transform: rotate(-45deg) translate(35px, 35px);
     }
 }
+
 /* Responsive Navbar Menu Starts */
 
 
-input[type=checkbox]{
+input[type=checkbox] {
     display: none;
 }
 
@@ -181,7 +225,7 @@ input[type=checkbox]{
     user-select: none;
 }
 
-@media (max-width: 768px){
+@media (max-width: 768px) {
     .menu {
         display: none;
         position: absolute;
@@ -201,15 +245,15 @@ input[type=checkbox]{
         margin-top: 12px;
     }
 
-    input[type=checkbox]:checked ~ .menu{
+    input[type=checkbox]:checked ~ .menu {
         display: block;
     }
 
-    .hamburger{
+    .hamburger {
         display: block;
     }
 
-    .dropdown{
+    .dropdown {
         left: 50%;
         top: 30px;
         transform: translateX(35%);
