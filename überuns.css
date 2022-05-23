@@ -6,11 +6,16 @@
 
 body {
     font-family: cursive;
+    background-color: #09262F;
 }
 
 header img {
     width: 90px;
     height: 90px;
+}
+
+main {
+    padding: 20px;
 }
 
 a {
@@ -26,7 +31,7 @@ li {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px;
+    padding: 5px;
     background-color: #A7BFD5;
     color: #09262F;
 }
@@ -37,21 +42,32 @@ li {
 
 .logo {
     font-size: 34px;
+    text-align: center;
+    position: fixed;
+    left: 80px;
 }
 
 .menu {
     display: flex;
-    gap: 1em;
+    gap: 17px;
     font-size: 18px;
 }
 
 .menu a:hover {
     color: #FFFFFF;
-    transition: color 0.25s;
+    transition: color 0.5s;
 }
 
 .menu li {
     padding: 5px 14px;
+}
+
+#open_close1, #open_close2, #open_close3, #open_close4 {
+    visibility: hidden;
+}
+
+#open_close3 {
+    color: #FFFFFF;
 }
 
 .categories {
@@ -99,21 +115,107 @@ dann einfach so gemacht haha
     text-align: center;
 }
 
-/* nicht nötig?
-.dropdown li:hover {
-    background-color: #A7BFD5;
-    color: #A7BFD5;
-}*/
-
 .categories:hover .dropdown {
     display: block;
 }
 
+.about {
+    text-align: center;
+    background-color: #A7BFD5;
+    padding: 30px;
+    margin: 30px;
+    border-style: solid;
+    border-radius: 5px;
+    border-color: #A7BFD5;
+}
+
+#about_h1 {
+    padding: 10px;
+}
+
+#about_description {
+    background-color: #000;
+    padding: 30px;
+    margin: 30px;
+    color: #A7BFD5;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: #000;
+}
+
+#about_table {
+    width: 100%;
+    font-size: 30px;
+}
+
+#about_text {
+    text-align: left;
+    padding: 20px;
+    margin: 15px;
+    color: #09262F;
+}
+
+@media (min-width: 768px) {
+
+    .menu-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 25px;
+        cursor: pointer;
+        transition: all .5s ease-in-out;
+    }
+
+    .menu-btn__burger {
+        width: 50px;
+        height: 6px;
+        background: #09262F;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(255, 101, 47, .2);
+        transition: all .5s ease-in-out;
+    }
+
+    .menu-btn__burger::before,
+    .menu-btn__burger::after {
+        content: '';
+        position: absolute;
+        width: 50px;
+        height: 6px;
+        background: #09262F;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(255, 101, 47, .2);
+        transition: all .5s ease-in-out;
+    }
+
+    .menu-btn__burger::before {
+        transform: translateY(-16px);
+    }
+
+    .menu-btn__burger::after {
+        transform: translateY(16px);
+    }
+
+    /* Animation */
+    .menu-btn.open .menu-btn__burger {
+        transform: translateX(-50px);
+        background: transparent;
+        box-shadow: none;
+    }
+
+    .menu-btn.open .menu-btn__burger::before {
+        transform: rotate(45deg) translate(35px, -35px);
+    }
+
+    .menu-btn.open .menu-btn__burger::after {
+        transform: rotate(-45deg) translate(35px, 35px);
+    }
+}
 
 /* Responsive Navbar Menu Starts */
 
 
-input[type=checkbox]{
+input[type=checkbox] {
     display: none;
 }
 
@@ -123,43 +225,41 @@ input[type=checkbox]{
     user-select: none;
 }
 
-@media (max-width: 768px){
+@media (max-width: 768px) {
     .menu {
         display: none;
         position: absolute;
-        background-color: teal;
+        background-color: #A7BFD5;
         right: 0;
         left: 0;
         text-align: center;
         padding: 16px 0;
     }
 
-    .menu li:hover {
-        display: inline-block;
-        background-color: #4c9e9e;
-        transition: 0.3s ease;
+    .menu a:hover {
+        color: #FFFFFF;
+        transition: color 0.25s;
     }
 
     .menu li + li {
         margin-top: 12px;
     }
 
-    input[type=checkbox]:checked ~ .menu{
+    input[type=checkbox]:checked ~ .menu {
         display: block;
     }
 
-    .hamburger{
+    .hamburger {
         display: block;
     }
 
-    .dropdown{
+    .dropdown {
         left: 50%;
         top: 30px;
         transform: translateX(35%);
     }
 
-    .dropdown li:hover{
-        background-color: gold;
+    .logo {
+        font-size: 0;
     }
-
 }
