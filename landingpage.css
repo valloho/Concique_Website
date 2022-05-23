@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300;400;500&display=swap');
 
 * { /*CSS Reset*/
     margin: 0;
@@ -7,32 +7,60 @@
     font-family: 'Darker Grotesque', sans-serif;
 }
 
+@media screen and (min-width: 400px) {
+
+    .container {
+        display: grid;
+        height: 100vh;
+        width: 100vw;
+        grid-template-columns: 30% 30% 30%;
+        grid-template-rows: 70% 30%;
+        grid-template-areas:
+        "bar club location"
+        "nav_bar nav_club nav_location";
+    }
+}
+
 .container {
     display: grid;
-    height: 100%;
-    grid-template-columns: 30% 30% 30%;
+    height: 100vh;
+    width: 100vw;
     grid-template-rows: 70% 30%;
     grid-template-areas:
-    "bar club location"
-    "bar club location"
-    "nav_bar nav_club nav_location";
+    "bar"
+    "nav_bar";
 }
 
 .landingpage_img {
-    display: grid;
+    position: relative;
     object-fit: cover;
-    height: 35em;
-    max-width: 25em;
+    height: 110%;
+    width: 100%;
+    min-width: 200px;
+    max-width: 400px;
+}
+
+.logo_img{ /*max width??*/
+    position: absolute;
+    width: 20%;
+    top: 5%;
+    left: 40%;
 }
 
 .navigation {
+    position: relative;
     background-color: #09262F;
-    max-width: 25em;
-    height: 30px;
+    align-self: stretch;
+    justify-self: stretch;
+    min-width: 200px;
+    max-width: 400px;
+    border-top-right-radius: 10%;
+    border-top-left-radius: 10%;
 }
 
-#img_bar {
+.image_content {
     grid-area: bar;
+    position: relative;
 }
 
 #navigationarea_bar{
@@ -41,4 +69,5 @@
 
 #button_bar {
     grid-area: nav_bar;
+    font-weight: 500;
 }
