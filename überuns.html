@@ -3,41 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title>Concique - Über Uns</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="überuns.css">
 </head>
 <body>
 <header>
-    <nav class="navbar">
-        <img src="images/concique_logo_dark.png" alt="Concique_Logo">
-        <h1 class="logo">Concique</h1>
-        <ul class="nav-links">
-            <input type="checkbox" id="checkbox_toggle"/>
-            <label for="checkbox_toggle" class="hamburger">&#9776;</label>
-            <div class="menu">
-                <li><a href="entdecken.html" id="open_close1">Entdecken</a></li>
-                <li><a href="suche.html" id="open_close2">Suche</a></li>
-                <li><a href="überuns.html" id="open_close3">Über Uns</a></li>
-                <li class="categories" id="open_close4">
-                    <a id="dropdown_categories">Club &#9660;</a>
-                    <ul class="dropdown">
-                        <li><a href="/" id="dropdown_color1">Bar</a></li>
-                        <li><a href="/" id="dropdown_color2">Event Locations</a></li>
-                        <li><a href="/" id="dropdown_color3">Other</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <div class="menu-btn">
-                        <div class="menu-btn__burger"></div>
-                    </div>
-                </li>
-            </div>
+    <a href="#" class="logo"><img src="images/concique_logo_dark.png" alt="Concique_Logo">Concique</a>
+    <div id="toggle"></div>
+    <div id="navbar">
+        <ul>
+            <li><a href="#">Entdecken &#128065;</a></li>
+            <li><a href="#">Suche &#128269;</a></li>
+            <li><a href="#" id="current_site">Über Uns &#128100;</a></li>
+            <li class="categories" id="open_close4">
+                <a id="dropdown_categories">Club &#9660;</a>
+                <ul class="dropdown">
+                    <li><a href="/" id="dropdown_color1">Bar</a></li>
+                    <li><a href="/" id="dropdown_color2">Event Location</a></li>
+                </ul>
+            </li>
         </ul>
-    </nav>
+    </div>
 </header>
-
-<main>
+<main id="main">
     <div class="about">
         <h1 id="about_h1">About Concique</h1>
         <div id="about_description">
@@ -67,10 +54,6 @@
             kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</b></p>
     </div>
 </main>
-
-<footer>
-
-</footer>
 <script src="überuns.js"></script>
 </body>
 </html>
