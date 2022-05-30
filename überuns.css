@@ -334,6 +334,9 @@ footer {
     display: flex;
 }
 
+.mobile-footer {
+    display: none;
+}
 
 /*
 Responsiveness
@@ -373,4 +376,50 @@ max-width: 768px; scheint der Standard zu sein
     #navbar ul li a {
         color: var(--bright-color);
     }
+
+    .wrapper {
+        display: none;
+    }
+
+    .about {
+        display: none;
+    }
+
+    footer {
+        border-top: 2px solid var(--bright-color);
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
+    }
+
+    .mobile-footer {
+        display: flex;
+    }
+
+    #footer_logo {
+        display: block;
+        height: 100px;
+        width: 100px;
+        text-align: center;
+    }
+
+    .footer_table {
+        width: 100%;
+        font-size: 30px;
+    }
+
+    #icon1 {
+        padding-right: 20px;
+        color: var(--bright-color);
+    }
+
+    #icon2 {
+        padding-right: 20px;
+        color: var(--bright-color);
+    }
+
+    #icon3 {
+        padding-right: 20px;
+        color: var(--bright-color);
+    }
+
 }
