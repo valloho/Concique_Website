@@ -36,8 +36,7 @@
     object-fit: cover;
     height: 110%;
     width: 100%;
-    min-width: 200px;
-    max-width: 400px;
+    min-width: 300px;
 }
 
 .logo_img{ /*max width??*/
@@ -52,7 +51,7 @@
     background-color: #09262F;
     align-self: stretch;
     justify-self: stretch;
-    min-width: 200px;
+    min-width: 300px;
     max-width: 400px;
     border-top-right-radius: 10%;
     border-top-left-radius: 10%;
@@ -61,6 +60,7 @@
 .image_content {
     grid-area: bar;
     position: relative;
+    max-width: 400px;
 }
 
 #navigationarea_bar{
