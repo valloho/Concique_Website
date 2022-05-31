@@ -2,9 +2,108 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Concique - Über Uns</title>
+    <link rel="stylesheet" href="überuns.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <!-- Script Source: https://ionic.io/ionicons -->
 </head>
 <body>
+<header>
+    <a href="#" class="logo"><img src="images/concique_logo_dark.png" alt="Concique_Logo">Concique</a>
+    <div id="toggle"></div>
+    <div id="navbar">
+        <ul>
+            <li><a href="entdecken.html">Entdecken &#128065;</a></li>
+            <li><a href="suche.html">Suche &#128269;</a></li>
+            <li><a href="#" id="current_site">Über uns &#128100;</a></li>
+            <li class="categories" id="open_close4">
+                <a id="dropdown_categories">Club &#9660;</a>
+                <ul class="dropdown">
+                    <li><a href="/" id="dropdown_color1">Bar</a></li>
+                    <li><a href="/" id="dropdown_color2">Event Location</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</header>
+<main id="main">
+    <div class="about">
+        <h1 id="about_h1">About Concique</h1>
+        <div id="about_description">
+            <table id="about_table">
+                <tr>
+                    <th>Concierge</th>
+                    <th>+</th>
+                    <th>Unique</th>
+                    <th>=</th>
+                    <th>Concique</th>
+                </tr>
+                <tr>
+                    <th>(Concierge Bild)</th>
+                    <th></th>
+                    <th>(Unique Bild)</th>
+                    <th></th>
+                    <th>(Concique Bild)</th>
+                </tr>
+            </table>
+        </div>
+        <p id="about_text"><b>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+            At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no
+            sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+            sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+            erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
+            kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</b></p>
+    </div>
+</main>
+<footer>
+    <div class="wrapper">
+        <div class="social_share_wrap">
+            <div class="ss_wrap ss_wrap_1">
+                <div class="ss_btn">
+                    <span class="icon">
+                        <ion-icon name="share-social"></ion-icon>
+                    </span>
+                </div>
+                <div class="dd_list">
+                    <ul>
+                        <li><a href="#" class="facebook">
+                            <span class="icon">
+                                <ion-icon name="logo-facebook"></ion-icon>
+                            </span>
+                        </a></li>
+                        <li><a href="#" class="instagram">
+                            <span class="icon">
+                                <ion-icon name="logo-instagram"></ion-icon>
+                            </span>
+                        </a></li>
+                        <li><a href="#" class="email">
+                            <span class="icon">
+                                <ion-icon name="mail-outline"></ion-icon>
+                            </span>
+                        </a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <div class="mobile-footer">
+        <table class="footer_table">
+            <tr>
+                <th><img src="images/concique_bright.png" alt="Concique_Logo" id="footer_logo"></th>
+            </tr>
+            <tr>
+                <th><a href="#"><ion-icon name="logo-instagram" id="icon1"></ion-icon></a>
+                    <a href="#"><ion-icon name="logo-facebook" id="icon2"></ion-icon></a>
+                    <a href="#"><ion-icon name="mail-outline" id="icon3"></ion-icon></a>
+                </th>
+            </tr>
+        </table>
+    </div>
+
+</footer>
+<script src="überuns.js"></script>
 </body>
 </html>
