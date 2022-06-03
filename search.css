@@ -1,0 +1,133 @@
+html, main {
+    background-color: #09262F;
+}
+
+h1 {
+    text-align: center;
+    background-color: #09262F;
+    color: #A7BFD4;
+    margin: 4em;
+    padding-bottom: 1em;
+    padding-top: 1em;
+}
+
+#searchListContainer {
+    border-top: 3px solid #294652;
+    border-radius: 3em;
+    background-color: #09262F;
+}
+
+.searchList, li, .whereGrid {
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+}
+
+/*region List*/
+li {
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.searchList {
+    margin-top: 4.5em;
+    border-top: 2px solid #294652;
+    border-bottom: 2px solid #071e26;
+}
+
+.searchElement {
+    border-top: 2px solid #071e26;
+    border-bottom: 2px solid #294652;
+}
+
+/*endregion*/
+
+/*region Grid*/
+.whereGrid {
+    display: grid;
+    grid-template-areas: "a1 a2 a3";
+    justify-content: center;
+    width: 100%;
+}
+
+.icon {
+    grid-area: a1;
+    margin-right: 1.5em;
+    align-self: center;
+}
+
+.line {
+    grid-area: a2;
+    background-color: #A7BFD4;
+    width: 2px;
+    height: 100%;
+    margin-right: 1.5em;
+    align-self: center;
+}
+
+.searchInput {
+    grid-area: a3;
+}
+/*endregion*/
+
+/*region Grid Elements*/
+input {
+    border: 1px solid #A7BFD4;
+    border-radius: 15px;
+    width: 15em;
+    height: 2em;
+    padding-left: 12px;
+    padding-right: 10px;
+
+    background-color: transparent;
+    color: #A7BFD4;
+}
+
+input:focus {
+    outline-color: white;
+}
+
+::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+label {
+    padding-left: 15px;
+    color: #A7BFD4;
+}
+
+.listIcon {
+    width: 30px;
+    height: 30px;
+    color: #A7BFD4;
+}
+/*endregion*/
+
+#searchButton {
+    margin: 2em;
+    width: 10em;
+    height: 3.5em;
+
+    border-radius: 1em;
+    border: 1px solid #A7BFD4;
+
+    background-color: #071e26;
+    transition-duration: 0.4s;
+    color: #A7BFD4;
+}
+
+.searchButton:hover {
+    color: #071e26;
+    background-color: #A7BFD4;
+}
+
+#searchIcon {
+    width: 2em;
+    height: 2em;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
