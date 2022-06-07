@@ -6,10 +6,9 @@
     font-size: 100%;
     font-family: 'Darker Grotesque', sans-serif;
 }
-
+/*
 @media screen and (min-width: 400px) {
-
-    .container {
+    .container1 {
         display: grid;
         height: 100vh;
         width: 100vw;
@@ -20,15 +19,16 @@
         "nav_bar nav_club nav_location";
     }
 }
+ */
 
-.container {
+.containerino {
     display: grid;
     height: 100vh;
     width: 100vw;
     grid-template-rows: 70% 30%;
     grid-template-areas:
-    "bar"
-    "nav_bar";
+    "img"
+    "navarea";
 }
 
 .landingpage_img {
@@ -36,8 +36,7 @@
     object-fit: cover;
     height: 110%;
     width: 100%;
-    min-width: 200px;
-    max-width: 400px;
+    min-width: 300px;
 }
 
 .logo_img{ /*max width??*/
@@ -48,26 +47,24 @@
 }
 
 .navigation {
+    grid-area: navarea;
     position: relative;
-    background-color: #09262F;
+    justify-self: center;
     align-self: stretch;
-    justify-self: stretch;
-    min-width: 200px;
-    max-width: 400px;
+    background-color: #09262F;
+    width: 400px;
     border-top-right-radius: 10%;
     border-top-left-radius: 10%;
 }
 
 .image_content {
-    grid-area: bar;
+    grid-area: img;
     position: relative;
-}
-
-#navigationarea_bar{
-    grid-area: nav_bar;
+    max-width: 400px;
+    justify-self: center;
 }
 
 #button_bar {
-    grid-area: nav_bar;
+    grid-area: navarea;
     font-weight: 500;
 }
