@@ -344,7 +344,7 @@ Funktioniert bis max-width: 980px aber nicht darunter, wtf?
 max-width: 768px; scheint der Standard zu sein
 */
 
-@media (max-width: 980px) {
+@media (max-width: 800px) {
     #navbar {
         position: fixed;
         bottom: -100%;
