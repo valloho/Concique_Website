@@ -46,7 +46,7 @@
     left: 40%;
 }
 
-.navigation {
+.navigation { /*border radius top right (smaller screen size)*/
     grid-area: navarea;
     position: relative;
     justify-self: center;
