@@ -338,6 +338,10 @@ footer {
     display: none;
 }
 
+.mobile_about_us {
+    display: none;
+}
+
 /*
 Responsiveness
 Funktioniert bis max-width: 980px aber nicht darunter, wtf?
@@ -391,35 +395,64 @@ max-width: 768px; scheint der Standard zu sein
         border-top-right-radius: 30px;
     }
 
-    .mobile-footer {
+
+    /* Mobile About Us Content */
+
+    .mobile_about_us {
+        display: flex;
+        padding-top: 1em;
+    }
+
+    #about_border{
+        border-top: 2px solid var(--bright-color);
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
+    }
+
+    .mobile_list {
+        font-size: 30px;
+        padding-top: 5em;
+    }
+
+    /* Mobile Footer Content */
+
+    .mobile_footer {
         display: flex;
     }
 
-    #footer_logo {
-        display: block;
-        height: 100px;
-        width: 100px;
+    .footer_list {
+        width: 100%;
+        font-size: 30px;
+        padding-top: 1em;
+    }
+
+    #footer_logo1 {
         text-align: center;
     }
 
-    .footer_table {
-        width: 100%;
-        font-size: 30px;
+    #footer_logo2 {
+        display: inline-block;
+        height: 100px;
+        width: 100px;
     }
 
-    #icon1 {
-        padding-right: 20px;
+    .searchElement {
+        text-align: center;
+        padding-bottom: 0.5em;
+        padding-top: 0.5em;
+        border-bottom: 2px solid var(--bright-color);
+    }
+
+    .footer_icons {
+        margin-left: 1em;
         color: var(--bright-color);
+        text-decoration: none;
     }
 
-    #icon2 {
-        padding-right: 20px;
+    #copyright {
         color: var(--bright-color);
+        font-size: 20px;
+        text-align: center;
+        padding-top: 3em;
     }
-
-    #icon3 {
-        padding-right: 20px;
-        color: var(--bright-color);
-    }
-
 }
