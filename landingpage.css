@@ -42,7 +42,7 @@
 .logo_img{ /*max width??*/
     position: absolute;
     width: 20%;
-    top: 5%;
+    top: 3%;
     left: 40%;
 }
 
@@ -58,7 +58,6 @@
 }
 
 .image_content {
-    grid-area: img;
     position: relative;
     max-width: 400px;
     justify-self: center;
@@ -67,4 +66,8 @@
 #button_bar {
     grid-area: navarea;
     font-weight: 500;
+}
+
+.shadowbox {
+   
 }
