@@ -10,66 +10,94 @@
 </head>
 <body>
 
+    <header>
+        <div class="center">
+            <img src="images/concique_bright.png" alt="Concique_Logo" id="logo">
+
+            <ion-icon name="menu" id="burger"></ion-icon>
+        </div>
+    </header>
+
     <main>
-        <h1>Search for a Club</h1>
+        <div class="mainPage">
+            <h1>Search for a Club</h1>
 
-        <div id="searchListContainer">
+            <div id="searchListContainer">
 
-            <ul class="searchList">
-                <li id="test" class="searchElement">
-                    <div class="whereGrid">
-                        <div class="icon">
-                            <ion-icon name="location" class="listIcon"></ion-icon>
+                <ul class="searchList">
+                    <li id="test" class="searchElement">
+                        <div class="whereGrid">
+                            <div class="icon">
+                                <ion-icon name="location" class="listIcon"></ion-icon>
+                            </div>
+
+                            <div class="line"></div>
+
+                            <div class="searchInput">
+                                <label for="where">Where?</label>
+                                <br>
+                                <input type="text" id="where" name="where" placeholder="Search..." required>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="searchElement">
+                        <div class="whereGrid">
+                            <div class="icon">
+                                <ion-icon name="calendar" class="listIcon"></ion-icon>
+                            </div>
+
+                            <div class="line"></div>
+
+                            <div class="searchInput">
+                                <label for="when">When?</label>
+                                <br>
+                                <input type="date" id="when" name="when" required>
+                            </div>
                         </div>
 
-                        <div class="line"></div>
+                    </li>
+                    <li class="searchElement">
 
-                        <div class="searchInput">
-                            <label for="where">Where?</label>
-                            <br>
-                            <input type="text" id="where" name="where" placeholder="Search..." required>
-                        </div>
-                    </div>
-                </li>
-                <li class="searchElement">
-                    <div class="whereGrid">
-                        <div class="icon">
-                            <ion-icon name="calendar" class="listIcon"></ion-icon>
-                        </div>
+                        <div class="whereGrid">
+                            <div class="icon">
+                                <ion-icon name="create" class="listIcon"></ion-icon>
+                            </div>
 
-                        <div class="line"></div>
+                            <div class="line"></div>
 
-                        <div class="searchInput">
-                            <label for="when">When?</label>
-                            <br>
-                            <input type="date" id="when" name="when" required>
-                        </div>
-                    </div>
-
-                </li>
-                <li class="searchElement">
-
-                    <div class="whereGrid">
-                        <div class="icon">
-                            <ion-icon name="create" class="listIcon"></ion-icon>
+                            <div class="searchInput">
+                                <label for="what">What?</label>
+                                <br>
+                                <input type="text" id="what" placeholder="Search..." name="what" required>
+                            </div>
                         </div>
 
-                        <div class="line"></div>
+                    </li>
+                </ul>
 
-                        <div class="searchInput">
-                            <label for="what">What?</label>
-                            <br>
-                            <input type="text" id="what" placeholder="Search..." name="what" required>
-                        </div>
-                    </div>
+                <div class="center">
+                    <button type="button" id="searchButton" class="center">
+                        <ion-icon name="search" id="searchIcon"></ion-icon>
+                    </button>
+                </div>
+            </div>
 
-                </li>
-            </ul>
+            <div id="scrollDown">
+                <div class="center">
+                    <p id="showResults">show results</p>
+                </div>
 
-            <div class="center">
-                <button type="button" id="searchButton" class="center">
-                    <ion-icon name="search" id="searchIcon"></ion-icon>
-                </button>
+                <div class="center">
+                    <ion-icon name="chevron-down" id="scrollDownIcon"></ion-icon>
+                </div>
+            </div>
+        </div>
+
+        <div class="results">
+            <h1>Results</h1>
+
+            <div id="clubList">
+                <img src="images/landingpage_bar.jpg" alt="image" class="wallPaper">
             </div>
         </div>
     </main>
