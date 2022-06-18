@@ -44,6 +44,7 @@
     width: 20%;
     top: 3%;
     left: 40%;
+    z-index: 2;
 }
 
 .navigation { /*border radius top right (smaller screen size)*/
@@ -58,6 +59,7 @@
 }
 
 .image_content {
+    grid-area: img;
     position: relative;
     max-width: 400px;
     justify-self: center;
@@ -69,5 +71,9 @@
 }
 
 .shadowbox {
-   
+    position: absolute;
+    width: 100vw;
+    height: 40%;
+    background: linear-gradient(rgba(0,0,0,0.7), transparent);
+    z-index: 1;
 }
