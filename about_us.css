@@ -4,6 +4,7 @@
     --dark-color: #09262F;
     --bright-color: #A7BFD5;
     --icon-hover-color: #3b5998;
+    --seperate_line-color: #294652;
 
     /* werden noch entfernt */
     --white: #fff;
@@ -349,6 +350,10 @@ max-width: 768px; scheint der Standard zu sein
 */
 
 @media (max-width: 800px) {
+    main {
+        padding: 0;
+    }
+
     #navbar {
         position: fixed;
         bottom: -100%;
@@ -389,32 +394,119 @@ max-width: 768px; scheint der Standard zu sein
         display: none;
     }
 
-    footer {
-        border-top: 2px solid var(--bright-color);
-        border-top-left-radius: 30px;
-        border-top-right-radius: 30px;
-    }
-
 
     /* Mobile About Us Content */
 
+    /* Mobile About Concique */
+
+
+
+
+    /* Mobile Team Members */
     .mobile_about_us {
-        display: flex;
-        padding-top: 1em;
+        width: 100%;
+        display: block;
+        padding-top: 4em;
+        font-size: 20px;
+        text-align: center;
     }
 
-    #about_border{
-        border-top: 2px solid var(--bright-color);
+    .members_list {
+        padding-top: 3em;
+    }
+
+    .mobile_list {
+        display: grid;
+        grid-template-areas:
+        "a1 a2"
+        "a3 a4"
+        "a5 a6"
+        "a7 a8";
+        font-size: 50px;
+        width: 100%;
+        padding-top: 1em;
+        border-top: 3px solid var(--seperate_line-color);
+        box-shadow: 0 -40px 30px #071e26;
         border-top-left-radius: 30px;
         border-top-right-radius: 30px;
     }
 
-    .mobile_list {
-        font-size: 30px;
-        padding-top: 5em;
+    #icon_schreier {
+        grid-area: a1;
+        font-size: 100px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #name_schreier {
+        grid-area: a2;
+        font-size: 35px;
+        line-height: 50px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #name_haber {
+        grid-area: a3;
+        font-size: 35px;
+        line-height: 50px;
+        justify-content: center;
+        align-items: center;
+        padding-top: 40px;
+    }
+
+    #icon_haber {
+        grid-area: a4;
+        font-size: 100px;
+        justify-content: center;
+        align-items: center;
+        padding-top: 40px;
+    }
+
+    #icon_schulterer {
+        grid-area: a5;
+        font-size: 100px;
+        justify-content: center;
+        align-items: center;
+        padding-top: 40px;
+    }
+
+    #name_schulterer {
+        grid-area: a6;
+        font-size: 35px;
+        line-height: 50px;
+        justify-content: center;
+        align-items: center;
+        padding-top: 40px;
+    }
+
+    #name_schwalm {
+        grid-area: a7;
+        font-size: 35px;
+        line-height: 50px;
+        justify-content: center;
+        align-items: center;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    #icon_schwalm {
+        grid-area: a8;
+        font-size: 100px;
+        justify-content: center;
+        align-items: center;
+        padding-top: 40px;
+        padding-bottom: 40px;
     }
 
     /* Mobile Footer Content */
+
+    footer {
+        border-top: 3px solid var(--bright-color);
+        box-shadow: 0 -40px 30px #071e26;
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
+    }
 
     .mobile_footer {
         display: flex;
@@ -438,13 +530,18 @@ max-width: 768px; scheint der Standard zu sein
 
     .searchElement {
         text-align: center;
-        padding-bottom: 0.5em;
-        padding-top: 0.5em;
-        border-bottom: 2px solid var(--bright-color);
+        padding-bottom: 0.25em;
+        padding-top: 0.25em;
+        border-bottom: 3px solid var(--seperate_line-color);
     }
 
     .footer_icons {
-        margin-left: 1em;
+        padding: 1em;
+        color: var(--bright-color);
+        text-decoration: none;
+    }
+
+    .footer_options {
         color: var(--bright-color);
         text-decoration: none;
     }
@@ -453,6 +550,7 @@ max-width: 768px; scheint der Standard zu sein
         color: var(--bright-color);
         font-size: 20px;
         text-align: center;
-        padding-top: 3em;
+        padding-top: 2em;
+        padding-bottom: 2em;
     }
 }
