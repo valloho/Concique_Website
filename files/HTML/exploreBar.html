@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Concique - Explore Bars</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/exploreBar.css">
+    <script src="../JS/exploreBar.js"></script>
+</head>
+<body>
+<header>
+    <div class="top" id="top">
+        <img src="../images/concique_logo_yellow.png" alt="Concique Logo" id="logo">
+        <ion-icon name="menu" id="burger"></ion-icon>
+    </div>
+    <div id="categoryPicker" class="center">
+    </div>
+</header>
+<main>
+    <div class="clubOfTheWeek" id="placeOfTheWeek">
+        <h1>Bar of the Week</h1>
+        <div id="center"></div>
+        <div class="container" id="container">
+            <div class="center">
+                <label id="nameOfCOTW"></label>
+                <div class="circle">
+                    <div class="arrow"></div>
+                </div>
+            </div>
+            <div class="scrollDown">
+                <div class="center">
+                    <a id="exploreMoreText" href="#otherClubsText">explore more</a>
+                </div>
+                <div class="center">
+                    <a href="#otherClubsText">
+                        <ion-icon name="chevron-down" id="scrollDownIcon"></ion-icon>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="otherClubs">
+        <h2 id="otherClubsText">Other Bars</h2>
+        <div class="otherClubsContainer" id="otherClubsContainerID">
+            <div id="batches">
+            </div>
+            <div class="loadMore" id="loadMore">
+                <div class="center">
+                    <a id="loadMoreText" href="#loadMore">more days</a>
+                </div>
+                <div class="center">
+                    <a id="scrollDownIconArea" href="#loadMore">
+                        <ion-icon name="chevron-down" id="scrollDownIcon"></ion-icon>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</body>
+</html>
