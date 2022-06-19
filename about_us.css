@@ -27,6 +27,14 @@ body {
     background-color: var(--dark-color);
 }
 
+/* * * * * * * * * * * * * * * *
+
+
+NAVIGATION BAR & ANIMATION
+
+
+* * * * * * * * * * * * * * * * */
+
 header {
     position: fixed;
     top: 0;
@@ -58,8 +66,6 @@ header img {
     align-items: center;
     padding-left: 20px;
 }
-
-/* Animation */
 
 #toggle {
     position: absolute;
@@ -153,15 +159,6 @@ header img {
     position: relative;
 }
 
-/* Das ist für den Hintergrund beim Wort Club
-#dropdown_categories {
-    background-color: #09262F;
-    padding: 5px;
-    color: #A7BFD5;
-    border-radius: 9px;
-}
- */
-
 .dropdown {
     background-color: var(--dark-color);
     position: absolute;
@@ -184,60 +181,157 @@ header img {
     display: block;
 }
 
+
+
+/* * * * * * * * * * * * * * * *
+
+
+Main Section:
+- About Us Team Members
+- About Us Text
+
+
+* * * * * * * * * * * * * * * * */
+
 main {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 80px;
-    padding: 20px;
     color: var(--bright-color);
     font-size: 34px;
 }
 
-.about {
-    text-align: center;
-    background-color: var(--bright-color);
-    padding: 30px;
-    margin: 30px;
-    border-style: solid;
-    border-radius: 5px;
-    border-color: var(--bright-color);
-}
-
-#about_h1 {
-    padding: 10px;
-    color: var(--dark-color);
-}
-
-#about_description {
-    background-color: #000;
-    padding: 30px;
-    margin: 30px;
-    color: var(--bright-color);
-    border-style: solid;
-    border-radius: 10px;
-    border-color: #000;
-}
-
-#about_table {
+.mobile_about_us {
     width: 100%;
-    font-size: 30px;
+    display: block;
+    padding-top: 2em;
+    font-size: 50px;
+    text-align: center;
 }
 
-#about_text {
-    text-align: left;
-    font-size: 30px;
-    padding: 20px;
-    margin: 15px;
-    color: var(--dark-color);
+.members_list {
+    padding-top: 2em;
 }
 
-/* Social Media Buttons */
+.mobile_list {
+    display: grid;
+    grid-template-areas:
+        "a1 a2"
+        "a3 a4"
+        "a5 a6"
+        "a7 a8"
+        "a9 a9";
+    font-size: 50px;
+    width: 100%;
+    padding-top: 1em;
+    border-top: 3px solid var(--seperate_line-color);
+    box-shadow: 0 -40px 30px #071e26;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+
+#icon_schreier {
+    grid-area: a1;
+    font-size: 100px;
+    justify-content: center;
+    align-items: center;
+}
+
+#name_schreier {
+    grid-area: a2;
+    font-size: 35px;
+    line-height: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+#name_haber {
+    grid-area: a3;
+    font-size: 35px;
+    line-height: 50px;
+    justify-content: center;
+    align-items: center;
+    padding-top: 40px;
+}
+
+#icon_haber {
+    grid-area: a4;
+    font-size: 100px;
+    justify-content: center;
+    align-items: center;
+    padding-top: 40px;
+}
+
+#icon_schulterer {
+    grid-area: a5;
+    font-size: 100px;
+    justify-content: center;
+    align-items: center;
+    padding-top: 40px;
+}
+
+#name_schulterer {
+    grid-area: a6;
+    font-size: 35px;
+    line-height: 50px;
+    justify-content: center;
+    align-items: center;
+    padding-top: 40px;
+}
+
+#name_schwalm {
+    grid-area: a7;
+    font-size: 35px;
+    line-height: 50px;
+    justify-content: center;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+
+#icon_schwalm {
+    grid-area: a8;
+    font-size: 100px;
+    justify-content: center;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+
+.mobile_about_text {
+    grid-area: a9;
+    font-size: 35px;
+    margin: 1em;
+    padding-top: 60px;
+    padding-bottom: 40px;
+    border-top: 3px solid var(--seperate_line-color);
+}
+
+
+
+/* * * * * * * * * * * * * * * *
+
+
+Footer:
+- Footer Content
+- Social Media Button for Desktop only!
+
+
+* * * * * * * * * * * * * * * * */
 
 footer {
     height: 100px;
 }
+
+/* Footer Content */
+
+.mobile_footer {
+    display: none;
+}
+
+/* Social Media Button */
 
 .wrapper {
     display: flex;
@@ -335,24 +429,28 @@ footer {
     display: flex;
 }
 
-.mobile-footer {
-    display: none;
-}
 
-.mobile_about_us {
-    display: none;
-}
 
-/*
-Responsiveness
-Funktioniert bis max-width: 980px aber nicht darunter, wtf?
-max-width: 768px; scheint der Standard zu sein
-*/
+/* * * * * * * * * * * * * * * *
+
+
+Media Query for Mobile
+
+
+* * * * * * * * * * * * * * * * */
+
+
 
 @media (max-width: 800px) {
-    main {
-        padding: 0;
-    }
+
+
+    /* * * * * * * * * * * * * * * *
+
+
+    Navigation Bar
+
+
+    * * * * * * * * * * * * * * * * */
 
     #navbar {
         position: fixed;
@@ -395,123 +493,13 @@ max-width: 768px; scheint der Standard zu sein
     }
 
 
-    /* Mobile About Us Content */
-
-    /* Mobile About Concique */
-
-    .mobile_about_concique {
-        display: inline-block;
-    }
+    /* * * * * * * * * * * * * * * *
 
 
-    /* Mobile Team Members */
-    .mobile_about_us {
-        width: 100%;
-        display: block;
-        padding-top: 2em;
-        font-size: 50px;
-        text-align: center;
-    }
+    Footer
 
-    .members_list {
-        padding-top: 2em;
-    }
 
-    .mobile_list {
-        display: grid;
-        grid-template-areas:
-        "a1 a2"
-        "a3 a4"
-        "a5 a6"
-        "a7 a8"
-        "a9 a9";
-        font-size: 50px;
-        width: 100%;
-        padding-top: 1em;
-        border-top: 3px solid var(--seperate_line-color);
-        box-shadow: 0 -40px 30px #071e26;
-        border-top-left-radius: 30px;
-        border-top-right-radius: 30px;
-    }
-
-    #icon_schreier {
-        grid-area: a1;
-        font-size: 100px;
-        justify-content: center;
-        align-items: center;
-    }
-
-    #name_schreier {
-        grid-area: a2;
-        font-size: 35px;
-        line-height: 50px;
-        justify-content: center;
-        align-items: center;
-    }
-
-    #name_haber {
-        grid-area: a3;
-        font-size: 35px;
-        line-height: 50px;
-        justify-content: center;
-        align-items: center;
-        padding-top: 40px;
-    }
-
-    #icon_haber {
-        grid-area: a4;
-        font-size: 100px;
-        justify-content: center;
-        align-items: center;
-        padding-top: 40px;
-    }
-
-    #icon_schulterer {
-        grid-area: a5;
-        font-size: 100px;
-        justify-content: center;
-        align-items: center;
-        padding-top: 40px;
-    }
-
-    #name_schulterer {
-        grid-area: a6;
-        font-size: 35px;
-        line-height: 50px;
-        justify-content: center;
-        align-items: center;
-        padding-top: 40px;
-    }
-
-    #name_schwalm {
-        grid-area: a7;
-        font-size: 35px;
-        line-height: 50px;
-        justify-content: center;
-        align-items: center;
-        padding-top: 40px;
-        padding-bottom: 20px;
-    }
-
-    #icon_schwalm {
-        grid-area: a8;
-        font-size: 100px;
-        justify-content: center;
-        align-items: center;
-        padding-top: 40px;
-        padding-bottom: 20px;
-    }
-
-    .mobile_about_text {
-        grid-area: a9;
-        font-size: 35px;
-        margin: 1em;
-        padding-top: 60px;
-        padding-bottom: 40px;
-        border-top: 3px solid var(--seperate_line-color);
-    }
-
-    /* Mobile Footer Content */
+    * * * * * * * * * * * * * * * * */
 
     footer {
         border-top: 3px solid var(--bright-color);
