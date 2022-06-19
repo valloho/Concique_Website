@@ -2,31 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Concique - Explore</title>
+    <title>Concique - Explore Clubs</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="explore.css">
-    <script src="explore.js"></script>
+    <link rel="stylesheet" href="exploreClub.css">
+    <script src="exploreClub.js"></script>
 </head>
 <body>
 <header>
-    <div class="top">
+    <div class="top" id="top">
         <img src="images/concique_logo_blue.png" alt="Concique Logo" id="logo">
         <ion-icon name="menu" id="burger"></ion-icon>
     </div>
+    <div id="categoryPicker" class="center">
+    </div>
 </header>
 <main>
-    <div class="clubOfTheWeek">
+    <div class="clubOfTheWeek" id="placeOfTheWeek">
         <h1>Club of the Week</h1>
-        <div class="center">
-        <img src="images/landingpage_bar.jpg" alt="Club of the week" class="cotwIMG">
-        </div>
-        <div class="container">
+        <div id="center"></div>
+        <div class="container" id="container">
             <div class="center">
-            <label id="nameOfCOTW">Praterdome</label>
+                <label id="nameOfCOTW"></label>
                 <div class="circle">
-                <div class="arrow"></div><br>
-            </div><br>
-        </div>
+                    <div class="arrow"></div>
+                </div>
+            </div>
             <div class="scrollDown">
                 <div class="center">
                     <a id="exploreMoreText" href="#otherClubsText">explore more</a>
@@ -42,13 +42,23 @@
     <div class="otherClubs">
         <h2 id="otherClubsText">Other Clubs</h2>
         <div class="otherClubsContainer" id="otherClubsContainerID">
-            <div class="batch1" id="batch1">
-
+            <div id="batches">
+            </div>
+            <div class="loadMore" id="loadMore">
+                <div class="center">
+                    <a id="loadMoreText" href="#loadMore">more days</a>
+                </div>
+                <div class="center">
+                    <a id="scrollDownIconArea" href="#loadMore">
+                    <ion-icon name="chevron-down" id="scrollDownIcon"></ion-icon>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
 </main>
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>
 </html>
