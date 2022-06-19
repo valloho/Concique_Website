@@ -399,20 +399,22 @@ max-width: 768px; scheint der Standard zu sein
 
     /* Mobile About Concique */
 
-
+    .mobile_about_concique {
+        display: inline-block;
+    }
 
 
     /* Mobile Team Members */
     .mobile_about_us {
         width: 100%;
         display: block;
-        padding-top: 4em;
-        font-size: 20px;
+        padding-top: 2em;
+        font-size: 50px;
         text-align: center;
     }
 
     .members_list {
-        padding-top: 3em;
+        padding-top: 2em;
     }
 
     .mobile_list {
@@ -421,7 +423,8 @@ max-width: 768px; scheint der Standard zu sein
         "a1 a2"
         "a3 a4"
         "a5 a6"
-        "a7 a8";
+        "a7 a8"
+        "a9 a9";
         font-size: 50px;
         width: 100%;
         padding-top: 1em;
@@ -487,7 +490,7 @@ max-width: 768px; scheint der Standard zu sein
         justify-content: center;
         align-items: center;
         padding-top: 40px;
-        padding-bottom: 40px;
+        padding-bottom: 20px;
     }
 
     #icon_schwalm {
@@ -496,7 +499,16 @@ max-width: 768px; scheint der Standard zu sein
         justify-content: center;
         align-items: center;
         padding-top: 40px;
+        padding-bottom: 20px;
+    }
+
+    .mobile_about_text {
+        grid-area: a9;
+        font-size: 35px;
+        margin: 1em;
+        padding-top: 60px;
         padding-bottom: 40px;
+        border-top: 3px solid var(--seperate_line-color);
     }
 
     /* Mobile Footer Content */
