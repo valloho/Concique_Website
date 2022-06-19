@@ -100,12 +100,38 @@ body{
     margin-top: 10px;
     background-color: #09262F;
 }
-.circle:hover, .arrow:hover{
+.circle:hover {
     background-color: #071e26;
 }
-.circle:checked, .arrow:checked{
-    background-color: #071e26;
+
+.circle:active{
+    background-color: #A7BFD4;
 }
+
+.circle:active > .arrow{
+    border:solid #09262F;
+    border-width: 0 2px 2px 0;
+    height: 5px;
+    width: 5px;
+    display: inline-block;
+    padding: 2px;
+    margin-top: 9px;
+    margin-left: 7px;
+    transform: rotate(-45deg);
+}
+
+.arrow:active{
+    border:solid #09262F;
+    border-width: 0 2px 2px 0;
+    height: 5px;
+    width: 5px;
+    display: inline-block;
+    padding: 2px;
+    margin-top: 9px;
+    margin-left: 7px;
+    transform: rotate(-45deg);
+}
+
 /*
 https://www.sliderrevolution.com/resources/css-arrow/
 Author: Hektor Wallin
