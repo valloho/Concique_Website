@@ -18,65 +18,79 @@
 
     <main>
         <div class="mainPage">
-            <h1 class="pageTitle">Search for a Club</h1>
+            <h1 class="pageTitle"></h1>
 
             <div id="searchListContainer">
-                <ul class="searchList">
-                    <li class="searchElement" class="element1">
-                        <div class="whereGrid">
-                            <div class="icon">
-                                <ion-icon name="location" class="listIcon"></ion-icon>
-                            </div>
+                <form>
+                    <fieldset>
+                        <ul class="searchList">
+                            <li class="searchElement" class="element1">
+                                <div class="whereGrid">
+                                    <div class="icon">
+                                        <ion-icon name="location" class="listIcon"></ion-icon>
+                                    </div>
 
-                            <div class="line"></div>
+                                    <div class="line"></div>
 
-                            <div class="searchInput">
-                                <label for="where">Where?</label>
-                                <br>
-                                <input type="text" id="where" name="where" placeholder="Search..." required>
-                            </div>
+                                    <div class="searchInput">
+                                        <label for="where">Where?</label>
+                                        <br>
+                                        <select class="form-control" id="where" name="where" required>
+                                            <option>District 1</option>
+                                            <option>District 2</option>
+                                            <option>District 3</option>
+                                            <option>District 4</option>
+                                            <option>District 5</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="searchElement" class="element2">
+                                <div class="whereGrid">
+                                    <div class="icon">
+                                        <ion-icon name="calendar" class="listIcon"></ion-icon>
+                                    </div>
+
+                                    <div class="line"></div>
+
+                                    <div class="searchInput">
+                                        <label for="when">When?</label>
+                                        <br>
+                                        <input type="date" id="when" name="when" required>
+                                    </div>
+                                </div>
+
+                            </li>
+                            <li class="searchElement" class="element3">
+
+                                <div class="whereGrid">
+                                    <div class="icon">
+                                        <ion-icon name="create" class="listIcon"></ion-icon>
+                                    </div>
+
+                                    <div class="line"></div>
+
+                                    <div class="searchInput">
+                                        <label for="what">What?</label>
+                                        <br>
+                                        <select class="form-control" id="what" name="where" required>
+                                            <option>Night Club</option>
+                                            <option>Dance Club</option>
+                                            <option>Wine Club</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                            </li>
+                        </ul>
+
+                        <div class="center">
+                            <button type="submit" id="searchButton" class="center">
+                                <ion-icon name="search" id="searchIcon"></ion-icon>
+                            </button>
                         </div>
-                    </li>
-                    <li class="searchElement" class="element2">
-                        <div class="whereGrid">
-                            <div class="icon">
-                                <ion-icon name="calendar" class="listIcon"></ion-icon>
-                            </div>
-
-                            <div class="line"></div>
-
-                            <div class="searchInput">
-                                <label for="when">When?</label>
-                                <br>
-                                <input type="date" id="when" name="when" required>
-                            </div>
-                        </div>
-
-                    </li>
-                    <li class="searchElement" class="element3">
-
-                        <div class="whereGrid">
-                            <div class="icon">
-                                <ion-icon name="create" class="listIcon"></ion-icon>
-                            </div>
-
-                            <div class="line"></div>
-
-                            <div class="searchInput">
-                                <label for="what">What?</label>
-                                <br>
-                                <input type="text" id="what" placeholder="Search..." name="what" required>
-                            </div>
-                        </div>
-
-                    </li>
-                </ul>
-
-                <div class="center">
-                    <button type="button" id="searchButton" class="center">
-                        <ion-icon name="search" id="searchIcon"></ion-icon>
-                    </button>
-                </div>
+                    </fieldset>
+                </form>
             </div>
 
             <div id="scrollDown">

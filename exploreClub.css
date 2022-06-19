@@ -47,7 +47,9 @@ body{
 .cotwIMG{
     border-radius: 30px;
     width: auto;
-    height: 28.125em;
+    height: 25.125em;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 #nameOfCOTW{
     background-color: #09262F;
@@ -90,7 +92,7 @@ body{
     width: 30px;
     height: 30px;
     border: 1px solid #A7BFD4;
-    margin-left: 15px;
+    margin-left: 5px;
     margin-top: 10px;
     background-color: #09262F;
 }
@@ -125,68 +127,6 @@ body{
     margin-left: 7px;
     transform: rotate(-45deg);
 }
-
-/*
-https://www.sliderrevolution.com/resources/css-arrow/
-Author: Hektor Wallin
-.arrow {
-    cursor: pointer;
-    height: 60px;
-    left: 50%;
-    position: absolute;
-    top: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    transition: transform 0.1s;
-    width: 40px;
-    border-radius: 100%;
-    border: 5px solid white;
-}
-.arrow-top, .arrow-bottom {
-    background-color: #666;
-    height: 4px;
-    left: -5px;
-    position: absolute;
-    top: 50%;
-    width: 100%;
-}
-.arrow-top:after, .arrow-bottom:after {
-    background-color: #fff;
-    content: "";
-    height: 100%;
-    position: absolute;
-    top: 0;
-    transition: all 0.15s;
-}
-.arrow-top {
-    transform: rotate(45deg);
-    transform-origin: bottom right;
-}
-.arrow-top:after {
-    left: 100%;
-    right: 0;
-    transition-delay: 0s;
-}
-.arrow-bottom {
-    transform: rotate(-45deg);
-    transform-origin: top right;
-}
-.arrow-bottom:after {
-    left: 0;
-    right: 100%;
-    transition-delay: 0.15s;
-}
-.arrow:hover .arrow-top:after {
-    left: 0;
-    transition-delay: 0.15s;
-}
-.arrow:hover .arrow-bottom:after {
-    right: 0;
-    transition-delay: 0s;
-}
-.arrow:active {
-    transform: translateX(-50%) translateY(-50%) scale(0.9);
-}
-*/
 
 .scrollDown {
     color: #A7BFD4;
@@ -277,4 +217,17 @@ h3{
 #loadMoreText{
     font-size: 1.5em;
     font-weight: bold;
+}
+
+.swal-modal{
+    background-color: #09262F;
+}
+.swal-text{
+    color: #A7BFD4;
+    text-align: center;
+    font-size: 30px;
+}
+.swall-title{
+    color: #A7BFD4;
+    background-color: #A7BFD4;
 }
