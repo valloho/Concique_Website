@@ -1,6 +1,16 @@
+class Date {
+
+    constructor(day, month, year) {
+
+        this.day = day;
+        this.month = month;
+        this.year = year;
+    }
+}
+
 class Event {
 
-    constructor(name, image, id, likes, views) {
+    constructor(name, image, id, likes, views, district, date, tags) {
 
         this.name = name;
         this.image = image;
@@ -11,6 +21,11 @@ class Event {
 }
 
 class SearchPage {
+
+    addEventType(type) {
+
+        document.querySelector(".pageTitle").append("Search for a " + type);
+    }
 
     addEvent(events) {
 
@@ -87,13 +102,15 @@ class SearchPage {
 
 document.addEventListener("DOMContentLoaded", function (event) {
 
+    let eventType = "Club";
+
     let events = [
 
         new Event("Event2", "images/EventTest2.png", 2, 43, 312),
         new Event("Event3", "images/EventTest3.png", 3, 69, 420),
         new Event("Event4", "images/landingpage_bar.jpg", 4, 187, 666)
-
     ]
 
     new SearchPage().addEvent(events);
+    new SearchPage().addEventType(eventType);
 });
