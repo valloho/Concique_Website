@@ -195,6 +195,11 @@ label {
     color: #A7BFD4;
 }
 
+#searchButton:hover {
+    color: #A7BFD4;
+    background-color: #294652;
+}
+
 #searchButton:active {
     color: #071e26;
     background-color: #A7BFD4;
@@ -291,6 +296,10 @@ label {
     color: #A7BFD4;
 }
 
+.detailsButton:hover {
+    background-color: #294652;
+}
+
 .detailsButton:active {
     color: #071e26;
     background-color: #A7BFD4;
@@ -338,6 +347,52 @@ article>button>label {
 
 @media only screen and (min-width: 600px) {
 
+    .searchList {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+
+        border: solid #A7BFD4 2px;
+        border-radius: 2em;
+
+        display: grid;
+        grid-template-areas:
+            "item1 item2 item3";
+
+        justify-content: center;
+
+    }
+
+    .element1 {
+        grid-area: item1;
+    }
+
+    .element2 {
+        grid-area: item2;
+    }
+
+    .element3 {
+        grid-area: item3;
+    }
+
+    .searchElement {
+        margin: 2em;
+        border: none;
+    }
+
+    /*region Search Button*/
+    #searchButton:hover {
+        color: #071e26;
+        background-color: #A7BFD4;
+    }
+
+    #searchButton:active {
+        color: #A7BFD4;
+        background-color: #294652;
+    }
+    /*endregion*/
+
+    /*region Event Item*/
     .wallPaper {
         width: 25%;
         height: 18em;
@@ -353,7 +408,18 @@ article>button>label {
         margin: 0.5em 0.2em 0 40%;
     }
 
+    .detailsButton:hover {
+        color: #071e26;
+        background-color: #A7BFD4;
+    }
+
+    .detailsButton:active {
+        background-color: #294652;
+        color: #A7BFD4;
+    }
+
     .infoLabel {
         margin: 0.5em 0 0 40%;
     }
+    /*endregion*/
 }
