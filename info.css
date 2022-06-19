@@ -35,7 +35,9 @@ h1 {
             "img"
             "content";
 }
-
+iframe {
+    border-radius: 30px;
+}
 header {
     grid-area: header;
 }
