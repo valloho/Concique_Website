@@ -70,6 +70,14 @@ main {
     float: right;
 }
 
+#voga_img {
+    border-radius: 30px;
+    width: 20em;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+}
+
 #moreInfo {
     text-decoration: none;
     font-size: 1.2em;
@@ -79,7 +87,7 @@ main {
     position: absolute;
     bottom: 4%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%);
 }
 
 #scrollDownIcon {
@@ -87,7 +95,7 @@ main {
     position: absolute;
     bottom: 0;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%);
     width: 30px;
     height: 30px;
     background: transparent;
