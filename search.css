@@ -205,11 +205,6 @@ label {
     color: #A7BFD4;
 }
 
-#searchButton:hover {
-    color: #A7BFD4;
-    background-color: #294652;
-}
-
 #searchButton:active {
     color: #071e26;
     background-color: #A7BFD4;
@@ -304,10 +299,6 @@ label {
     background-color: #071e26;
     transition-duration: 0.1s;
     color: #A7BFD4;
-}
-
-.detailsButton:hover {
-    background-color: #294652;
 }
 
 .detailsButton:active {
