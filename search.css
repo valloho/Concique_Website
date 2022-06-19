@@ -1,18 +1,43 @@
-@import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300;400;500&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300;400;500;600;700;800;900&display=swap');
 html, main, header {
     background-color: #09262F;
-    font-family: 'Darker Grotesque', sans-serif;
+    font-family: 'Darker Grotesque', sans-serif !important;
+    scroll-behavior: smooth;
 }
 
 h1 {
     text-align: center;
-    background-color: #09262F;
     color: #A7BFD4;
-    margin: 2em;
-    padding-bottom: 1em;
-    padding-top: 1em;
+    font-size: 2.7em !important;
+    font-weight: 600 !important;
+}
+
+h2 {
     font-size: 2.5em !important;
+    font-weight: 400!important;
+    color: #A7BFD4;
+}
+
+p {
+    font-size: 1.2em !important;
+    color: #A7BFD4;
+}
+
+a:link, a:visited,  a:hover, a:active {
+    font-size: 1.2em;
+    color: #A7BFD4;
+    text-decoration: none !important;
+    box-shadow: none;
+}
+
+label {
+    font-size: 1.2em !important;
+}
+
+.pageTitle {
+    margin-left: 2em;
+    margin-right: 2em;
+    padding-bottom: 1em;
 }
 
 #searchListContainer {
@@ -33,16 +58,19 @@ h1 {
 }
 
 #logo {
-    margin-top: 1em;
+    margin-top: 0.5em;
+    margin-left: 0.2em;
     height: 50px;
-    margin-right: 18em;
 }
 
 #burger {
-    margin-top: 1em;
+    margin-top: 0.5em;
+    margin-right: 0.6em;
+
     color: #A7BFD4;
     width: 50px;
     height: 50px;
+    float: right;
 }
 
 
@@ -67,11 +95,13 @@ li {
 
 body {
     display: grid;
-    grid-template-rows: 10% 90%;
-    grid-template-areas:
-        "header"
-        "mainPage"
+
+    grid-template:
+        "header" 7%
+        "mainPage" 93%
         "clubList";
+
+    height: 100%;
 }
 
 .header {
@@ -81,7 +111,7 @@ body {
 
 .mainPage {
     grid-area: mainPage;
-    height: 90vh;
+    height: 100vh;
 }
 
 .results {
@@ -150,6 +180,7 @@ label {
 }
 /*endregion*/
 
+/*region Search Button*/
 #searchButton {
     margin: 2em;
     width: 11em;
@@ -163,7 +194,7 @@ label {
     color: #A7BFD4;
 }
 
-.searchButton:hover {
+#searchButton:active {
     color: #071e26;
     background-color: #A7BFD4;
 }
@@ -172,28 +203,31 @@ label {
     width: 2em;
     height: 2em;
 }
+/*endregion*/
 
+/*region Show Results*/
 #scrollDown {
     color: #A7BFD4;
 }
 
 #scrollDownIcon {
-    width: 30px;
-    height: 30px;
+    width: 2em;
+    height: 2em;
 }
 
 #showResults {
     text-align: center;
-    margin-bottom: 0.5em;
+    font-weight: 700 !important;
 }
+/*endregion*/
 
-.results {
 
-}
 
-.wallPaper {
-    width: 80%;
-    border-radius: 3em;
+#wallPaperImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 2em;
 }
 
 #clubList {
@@ -203,6 +237,84 @@ label {
     box-shadow: 0px -40px 30px #071e26;
 }
 
+#clubList>article {
+    margin-top: 3em;
+    padding-bottom: 1em;
+    border-bottom: solid #294652 2px;
+}
+
+.wallPaper {
+    width: 85%;
+    height: 15em;
+    border-radius: 3em;
+    background-color: #A7BFD4;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.name {
+    display: inline-block;
+    margin: 0.5em 0 0 15%;
+}
+
+.detailsButton {
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+#detailsButton {
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 1.5em;
+
+    border: 1px solid #A7BFD4;
+
+    background-color: #071e26;
+    transition-duration: 0.1s;
+    color: #A7BFD4;
+
+    grid-area: button;
+}
+
+#detailsButton:active {
+    color: #071e26;
+    background-color: #A7BFD4;
+}
+
+#detailButtonIcon {
+    width: 2em;
+    height: 2em;
+}
+
+.infoLabel {
+    margin: 0.5em 0 0 15%;
+    display: flex;
+    align-items: center;
+}
+
+article>button {
+    border-radius: 1em;
+    border: 1px solid #A7BFD4;
+
+    background-color: #071e26;
+    transition-duration: 0.4s;
+    color: #A7BFD4;
+}
+
+article>button>label {
+    font-size: 1em !important;
+    font-weight: 600 !important;
+}
+
+#loadMore>p {
+    margin-bottom: 0;
+    text-align: center;
+    font-weight: 700 !important;
+}
+
+/* Pls ignore me for now*/
 
 .center {
     display: flex;
