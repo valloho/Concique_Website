@@ -63,8 +63,8 @@
     justify-self: center;
     align-self: stretch;
     background-color: var(--main-color);
-    border-top-right-radius: 10%;
-    border-top-left-radius: 10%;
+    border-top-right-radius: 3em;
+    border-top-left-radius: 3em;
     box-shadow: rgba(0, 0, 0, 0.45) 0 -5px 15px 0;
 }
 
