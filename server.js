@@ -14,18 +14,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use('/api', placeRouter);
 
-app.get('/',function(req, res) {
-    res.sendFile(path.join(__dirname + '/files/landingpage.html'));
-});
-
-app.listen(port, (error) => {
-    if (error) {
-        console.log(error);
-    } else {
-        console.log(`Server listening at http://localhost:${port}`)
-    }
-});
-
 /*Session Management*/
 
 const cookieParser = require("cookie-parser");
@@ -56,7 +44,12 @@ let password = 'mypassword'
 // a variable to save a session
 let session;
 
-app.get('/',(req,res) => {
+app.get('/', (req, res) => {
+     res.sendFile(path.join(__dirname + '/files/landingpage.html'));
+     window.document.getElementById("imgarea_bar");
+});
+
+app.get('/login',(req,res) => {
     session = req.session;
     if(session.userid){ //user is already logged in
         res.sendFile(path.join(__dirname + '/files/exploreClub.html'));
@@ -76,3 +69,20 @@ app.post('/user',(req,res) => {
     }
 })
 
+app.listen(port, (error) => {
+    if (error) {
+        console.log(error);
+    } else {
+        console.log(`Server listening at http://localhost:${port}`)
+    }
+});
+
+function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+}
