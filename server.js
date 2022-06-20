@@ -46,7 +46,6 @@ let session;
 
 app.get('/', (req, res) => {
      res.sendFile(path.join(__dirname + '/files/landingpage.html'));
-     window.document.getElementById("imgarea_bar");
 });
 
 app.get('/login',(req,res) => {
