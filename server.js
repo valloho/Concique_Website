@@ -7,7 +7,6 @@ const placeRouter = require('./api/routes/place-routes');
 const app = express();
 const port = process.env.PORT ?? 3000;
 
-
 app.use(express.static(path.join(__dirname, '/files')));
 
 app.use(bodyParser.urlencoded({ extended: true }));
