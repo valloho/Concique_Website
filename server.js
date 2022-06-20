@@ -44,14 +44,10 @@ let password = 'mypassword'
 // a variable to save a session
 let session;
 
-app.get('/', (req, res) => {
-     res.sendFile(path.join(__dirname + '/files/landingpage.html'));
-});
-
-app.get('/login',(req,res) => {
+app.get('/',(req,res) => {
     session = req.session;
     if(session.userid){ //user is already logged in
-        res.sendFile(path.join(__dirname + '/files/exploreClub.html'));
+        res.sendFile(path.join(__dirname + '/files/landingpage.html'));
     } else
         res.sendFile(path.join(__dirname + '/files/login.html'))
 });
@@ -61,7 +57,7 @@ app.post('/user',(req,res) => {
         session = req.session;
         session.userid = req.body.username;
         console.log(req.session)
-        res.sendFile(path.join(__dirname + '/files/exploreClub.html'));
+        res.sendFile(path.join(__dirname + '/files/landingpage.html'));
     }
     else {
         res.send('Invalid username or password');
@@ -75,7 +71,7 @@ app.listen(port, (error) => {
         console.log(`Server listening at http://localhost:${port}`)
     }
 });
-
+/*
 function isInViewport(element) {
     const rect = element.getBoundingClientRect();
     return (
@@ -85,3 +81,4 @@ function isInViewport(element) {
         rect.right <= (window.innerWidth || document.documentElement.clientWidth)
     );
 }
+ */
