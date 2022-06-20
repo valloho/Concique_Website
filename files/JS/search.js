@@ -155,6 +155,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         "karaokeClub",
         "adultClub"
     ]
+
     const barTags = [
 
         "beerBar",
