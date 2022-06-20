@@ -1,33 +1,16 @@
-const model = require("../models/place-model");
+const model = require("../models/club-model");
 
-class PlaceController {
+class ClubController {
         static REQUIRED = ["name", "image", "likes", "views"];
-        /*
 
-        getCategories(req, res){
-            res.send(model.getCategories());
+        getClubOfTheWeek(req, res) {
+            res.send(model.getClubOfTheWeek())
         }
-
-        getBatches(req, res){
-            res.send(model.getBatches())
-        }
-
-         */
 
         getDates(req, res) {
             res.send(model.getDates());
         }
-/*
-        getCategoryBatches(req, res) {
-            res.send(model.getBatches(req.params.category));
-        }
 
-        getBatchDates(req, res) {
-            res.send(model.getDates(req.params.batch));
-        }
-
-
- */
         getDatePlaces(req, res) {
             res.send(model.getPlaces(req.params.dateNumber));
         }
@@ -44,7 +27,7 @@ class PlaceController {
         checkPlaceProperties(res, place, id) {
             let result = true;
 
-            const mandatoryNames = [...PlaceController.REQUIRED];
+            const mandatoryNames = [...ClubController.REQUIRED];
 
             if (id) {
                 mandatoryNames.push("id");
@@ -113,4 +96,4 @@ class PlaceController {
 
 }
 
-module.exports = new PlaceController();
+module.exports = new ClubController();

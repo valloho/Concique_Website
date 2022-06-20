@@ -2,7 +2,7 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const express = require('express');
 
-const placeRouter = require('./api/routes/place-routes');
+const placeRouter = require('./api/routes/club-routes');
 
 const app = express();
 const port = process.env.PORT ?? 3000;
