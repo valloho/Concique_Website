@@ -215,7 +215,7 @@ class PlaceModel {
          */
         const date = this.getDate(id);
         if (/*category && batch && */date) {
-            placeDeleted = this.places.get(date).get(id);
+            placeDeleted = this.places.get(date).delete(id);
         }
         return placeDeleted;
     }

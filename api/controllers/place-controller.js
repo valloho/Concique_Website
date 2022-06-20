@@ -50,7 +50,7 @@ class PlaceController {
                 mandatoryNames.push("id");
             }
 
-            const containedNames = mandatoryNames.filter(c => c in book);
+            const containedNames = mandatoryNames.filter(c => c in place);
             if (containedNames.length < mandatoryNames.length) {
                 const necessary = mandatoryNames.join(", ");
                 const contained = containedNames.length === 0 ? "none of those" : "only " + containedNames.join(", ");
@@ -64,7 +64,6 @@ class PlaceController {
                     result = false;
                 }
             }
-
             return result;
         }
 
