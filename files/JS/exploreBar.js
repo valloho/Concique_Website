@@ -1,28 +1,4 @@
-class Batch{
-    constructor(number, id, ...dates) {
-        this.number = number;
-        this.id = id;
-        this.dates = dates;
-    }
-}
 
-class Date {
-    constructor(date, id , ...places) {
-        this.date = date;
-        this.id = id;
-        this.places = places;
-    }
-}
-
-class Place {
-    constructor(name, image, id, likes, views) {
-        this.name = name;
-        this.image = image;
-        this.id = id;
-        this.likes = likes;
-        this.views = views;
-    }
-}
 
 class ExplorePage{
     addPlaceOfTheWeekToDOM(place){

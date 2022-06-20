@@ -1,25 +1,22 @@
-class Category{
-    constructor(name, id, ...batches) {
+class Category {
+    constructor(name, id) {
         this.name = name;
         this.id = id;
-        this.batches = batches;
     }
 }
 
 
-class Batch{
-    constructor(number, id, ...dates) {
+class Batch {
+    constructor(number, id) {
         this.number = number;
         this.id = id;
-        this.dates = dates;
     }
 }
 
 class Date {
-    constructor(date, id , ...places) {
+    constructor(date, id) {
         this.date = date;
         this.id = id;
-        this.places = places;
     }
 }
 
@@ -40,35 +37,37 @@ class PlaceModel {
     static PLACE_ID = 1;
 
     constructor() {
+        this.batches = new Map();
+        this.dates = new Map();
         this.places = new Map();
     }
 
     addCategory(category) {
-        if (!this.places.get(category)){
+        if (!this.batches.get(category)){
             category.id = PlaceModel.CATEGORY_ID++;
-            this.places.set(category, new Map());
+            this.batches.set(category, new Map());
         }
     }
 
     getCategories() {
-        return Array.from(this.places.keys());
+        return Array.from(this.batches.keys());
     }
 
     addBatches(batch) {
-        if (!this.places.get(batch)){
+        if (!this.dates.get(batch)){
             batch.id = PlaceModel.BATCH_ID++;
-            this.places.set(batch, new Map());
+            this.dates.set(batch, this.batches);
         }
     }
 
     getBatches() {
-        return Array.from(this.places.keys());
+        return Array.from(this.dates.keys());
     }
 
     addDates(date) {
         if (!this.places.get(date)) {
             date.id = PlaceModel.DATE_ID++;
-            this.places.set(date, new Map());
+            this.places.set(date, this.dates);
         }
     }
 
@@ -77,31 +76,35 @@ class PlaceModel {
     }
 
     addPlace(category, batch, date, place) {
-        if (!this.places.get(category)) {
-            throw new Error(`Unknown place category ${category.name}`)
-        }else if (!this.places.get(batch)) {
+        if (!this.batches.get(category)) {
+            throw new Error(`Unknown batch category ${category.name}`)
+        }else if (!this.dates.get(batch)) {
             throw new Error(`Unknown place batch ${batch.number}`)
         }else if (!this.places.get(date)) {
             throw new Error(`Unknown place date ${date.id}`)
         }
         place.id = PlaceModel.PLACE_ID++;
-        this.getPlacesAsMap(category, batch, date).set(place.id, place)
+        this.getPlacesAsMap(date).set(place.id, place);
+    }
+
+    getPlaces(date) {
+        return Array.from(this.getPlacesAsMap(date).values());
     }
 
     resolveCategory(category) {
         if (typeof category === "string") {
-            for (const [_category, _batch, _date, places] of this.places.entries()){
+            for (const [_category, batches] of this.batches.entries()){
                 if (_category.name === category) {
                     return _category;
                 }
             }
-            throw new Error(`Unknown place category ${category}`)
+            throw new Error(`Unknown batch category ${category}`)
         }
         return category;
     }
     resolveBatch(batch) {
         if (typeof batch === "string") {
-            for (const [_batch, _date, places] of this.places.entries()){
+            for (const [_batch, dates] of this.dates.entries()){
                 if (_batch.number === batch) {
                     return _batch;
                 }
@@ -123,15 +126,22 @@ class PlaceModel {
         return date;
     }
 
-    getPlacesAsMap(category, batch, date) {
-        return this.places.get(this.resolveCategory(category))
-            .get(this.resolveBatch(batch)).get(this.resolveDate(date));
+    getBatchesAsMap(category) {
+        return this.batches.get(this.resolveCategory(category))
+    }
+
+    getDatesAsMap(batch) {
+        return this.dates.get(this.resolveBatch(batch))
+    }
+
+    getPlacesAsMap(date) {
+        return this.places.get(this.resolveDate(date));
     }
 
     getCategory(id) {
-        for (const [category, placesAsMap] of this.places.entries()) {
-            const places = Array.from(placesAsMap.values());
-            if (places.find(place => place.id === id)) {
+        for (const [category, batchesAsMap] of this.batches.entries()) {
+            const batches = Array.from(batchesAsMap.values());
+            if (batches.find(batch => batch.id === id)) {
                 return category;
             }
         }
@@ -139,9 +149,9 @@ class PlaceModel {
     }
 
     getBatch(id) {
-        for (const [batch, placesAsMap] of this.places.entries()) {
-            const places = Array.from(placesAsMap.values());
-            if (places.find(place => place.id === id)) {
+        for (const [batch, datesAsMap] of this.places.entries()) {
+            const dates = Array.from(datesAsMap.values());
+            if (dates.find(date => date.id === id)) {
                 return batch;
             }
         }
@@ -165,11 +175,9 @@ class PlaceModel {
 
         let place = null;
 
-        const category = this.getCategory(id);
-        const batch = this.getBatch(id);
         const date = this.getDate(id);
-        if (category && batch && date) {
-            place = this.places.get(category).get(batch).get(date).get(id);
+        if (date) {
+            place = this.places.get(date).get(id);
         }
         return place;
     }
@@ -222,7 +230,7 @@ model.addPlace(clubCategory,batch1Batch, june24Date, new Place("Crazy Brudi", "i
     "69", "12940"));
 const batch2Batch = new Batch("batch2");
 model.addBatches(batch2Batch);
-const june25Date = new Date("Saturday, 25 June");
+const june25Date = new Date("Saturday, 25 June", );
 model.addDates(june25Date);
 model.addPlace(clubCategory,batch2Batch, june25Date, new Place("Praterdome", "images/landingpage_club.jpg",
     "632", "30000"));
