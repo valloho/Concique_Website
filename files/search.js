@@ -182,7 +182,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     form.addEventListener("submit", function (e) {
 
         e.preventDefault();
-        document.querySelector("article").remove();
+        document.querySelector("article")?.remove();
         let location = document.getElementById("where").value;
         console.log(location);
         let date = document.querySelector('input[type="date"]').value;
