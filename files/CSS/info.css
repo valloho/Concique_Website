@@ -35,7 +35,9 @@ h1 {
             "img"
             "content";
 }
-
+iframe {
+    border-radius: 30px;
+}
 header {
     grid-area: header;
 }
@@ -70,6 +72,27 @@ main {
     float: right;
 }
 
+.carousel {
+    border-radius: 30px;
+    overflow: hidden;
+    width: 20em;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.carousel .carousel-indicators {
+    background: transparent;
+    bottom: -5%;
+}
+
+
+.carousel .carousel-indicators li {
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+}
+
 #moreInfo {
     text-decoration: none;
     font-size: 1.2em;
@@ -79,7 +102,7 @@ main {
     position: absolute;
     bottom: 4%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%);
 }
 
 #scrollDownIcon {
@@ -87,8 +110,9 @@ main {
     position: absolute;
     bottom: 0;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%);
     width: 30px;
     height: 30px;
     background: transparent;
 }
+
