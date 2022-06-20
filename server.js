@@ -59,9 +59,9 @@ let session;
 app.get('/',(req,res) => {
     session = req.session;
     if(session.userid){ //user is already logged in
-        res.sendFile(path.join(__dirname + '/files/exploreBar.html'));
+        res.sendFile(path.join(__dirname + '/files/exploreClub.html'));
     } else
-        res.sendFile('/files/login.html',{root:__dirname})
+        res.sendFile(path.join(__dirname + '/files/login.html'))
 });
 
 app.post('/user',(req,res) => {
@@ -69,7 +69,7 @@ app.post('/user',(req,res) => {
         session = req.session;
         session.userid = req.body.username;
         console.log(req.session)
-        res.sendFile(path.join(__dirname + '/files/exploreBar.html'));
+        res.sendFile(path.join(__dirname + '/files/exploreClub.html'));
     }
     else {
         res.send('Invalid username or password');
