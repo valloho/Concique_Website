@@ -16,7 +16,7 @@
 }
 
 body {
-    background-color: var(--dark-color);
+    background-color: var(--dark-color) !important;
 }
 
 /* * * * * * * * * * * * * * * *
@@ -27,6 +27,7 @@ NAVIGATION BAR & ANIMATION
 
 * * * * * * * * * * * * * * * * */
 
+/*
 header {
     position: fixed;
     top: 0;
@@ -101,7 +102,8 @@ header img {
 #toggle.active::after {
     transform: translateY(0px) rotate(-45deg);
 }
-
+*/
+/*
 #navbar {
     position: relative;
     height: 100px;
@@ -172,7 +174,7 @@ header img {
 .categories:hover .dropdown {
     display: block;
 }
-
+*/
 
 
 /* * * * * * * * * * * * * * * *
@@ -185,12 +187,15 @@ Main Section:
 
 * * * * * * * * * * * * * * * * */
 
+ul {
+    padding: 0!important;
+}
+
 main {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 80px;
     color: var(--bright-color);
     font-size: 34px;
 }
@@ -201,10 +206,6 @@ main {
     padding-top: 2em;
     font-size: 50px;
     text-align: center;
-}
-
-.members_list {
-    padding-top: 2em;
 }
 
 .mobile_list {

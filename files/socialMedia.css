@@ -1,0 +1,101 @@
+:root {
+    --dark-color: #09262F;
+    --bright-color: #A7BFD5;
+    --icon-hover-color: #3b5998;
+    --seperate_line-color: #294652;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: left;
+    margin: 30px 0;
+    padding: 30px;
+}
+
+.ss_wrap {
+    position: relative;
+}
+
+.ss_wrap .ss_btn {
+    background: var(--dark-color);
+    color: var(--bright-color);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.ss_btn .icon {
+    display: flex;
+    margin-right: 5px;
+}
+
+.ss_btn:hover {
+    border: 2px solid var(--bright-color);
+    transform: scale(1.4);
+    transition: transform 0.5s ease, border 0.5s ease;
+}
+
+.ss_wrap .dd_list {
+    position: absolute;
+}
+
+.ss_wrap .dd_list ul {
+    display: none;
+    width: auto;
+    background: var(--dark-color);
+    margin: 0 10px;
+    border-radius: 25px;
+    position: relative;
+    list-style: none;
+    text-decoration: none;
+}
+
+.ss_wrap .dd_list ul li a {
+    display: flex;
+    width: 50px;
+    height: 50px;
+    margin: 0 10px;
+    font-size: 40px;
+    justify-content: center;
+    align-items: center;
+    color: var(--bright-color);
+}
+
+.ss_wrap .dd_list ul:before {
+    content: "";
+    position: absolute;
+    border: 8px solid;
+}
+
+.ss_wrap.ss_wrap_1 .dd_list {
+    top: 0;
+    left: 60px;
+}
+
+.ss_wrap.ss_wrap_1 .dd_list ul:before {
+    top: 50%;
+    transform: translateY(-50%);
+    left: -15px;
+    border-color: transparent var(--dark-color) transparent transparent;
+}
+
+.ss_wrap.ss_wrap_1 .dd_list ul li a.facebook span.icon:hover {
+    color: var(--icon-hover-color);
+}
+
+.ss_wrap.ss_wrap_1 .dd_list ul li a.instagram span.icon:hover {
+    color: var(--icon-hover-color);
+}
+
+.ss_wrap.ss_wrap_1 .dd_list ul li a.email span.icon:hover {
+    color: var(--icon-hover-color);
+}
+
+.ss_wrap .ss_btn.active + .dd_list ul {
+    display: flex;
+}
