@@ -43,12 +43,13 @@ body {
     grid-template:
         "header" auto
         "mainPage" auto
-        "clubList";
+        "clubList" auto
+        "socialMedia" auto;
 
     height: 100%;
 }
 
-.header {
+header {
     grid-area: header;
     height: 10vh;
 }
@@ -61,6 +62,10 @@ body {
 .results {
     grid-area: clubList;
     color: #A7BFD4;
+}
+
+.wrapper {
+    grid-area: socialMedia;
 }
 /*endregion*/
 
