@@ -2,20 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Concique - Login</title>
+    <link rel="stylesheet" href="login.css">
 </head>
 <body>
 <div class="form-popup" id="myForm">
   <form action="/user" method="post" class="form-container">
-    <h1>Login</h1>
-
-    <label for="username">Username:</label>>
-    <input type="text" placeholder="username" id="username" name="username" required>
-
-    <label for="password">Password:</label>
-    <input type="password" placeholder="password" id="password" name="password" required>
-
-    <button type="submit" class="btn" value="LogIn">Login</button>
+    <h1>Login to Concique</h1>
+    <div id="login">
+        <label for="username">Username:</label>
+        <input type="text" placeholder="Username" id="username" name="username" required>
+        <br><br>
+        <label for="password">Password:</label>
+        <input type="password" placeholder="Password" id="password" name="password" required>
+        <br><br>
+        <button type="submit" class="btn" value="LogIn" id="login_button">Login</button>
+    </div>
   </form>
 </div>
 </body>
