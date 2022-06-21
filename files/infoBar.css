@@ -71,6 +71,15 @@ li {
     box-shadow: 0 -30px 40px var(--shadow-color);
 }
 
+.bar_img {
+    border-radius: 30px;
+    overflow: hidden;
+    width: 20em;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+}
+/*
 .carousel {
     border-radius: 30px;
     overflow: hidden;
@@ -91,6 +100,8 @@ li {
     border-radius: 100%; !important;
     padding: 0;
 }
+
+ */
 
 #moreInfo {
     text-decoration: none;
