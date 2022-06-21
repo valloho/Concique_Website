@@ -115,24 +115,33 @@ class ClubModel {
 const model = new ClubModel();
 const june25Date = new Date("Saturday, 25 June", "25.6", );
 model.addDates(june25Date);
-model.addPlace(june25Date, new Place("Praterdome", "images/landingpage_club.jpg",
+model.addPlace(june25Date, new Place("Praterdome", "images/clubs/praterdom.jpg",
     "632", "30000"));
-model.addPlace(june25Date, new Place("Volksgarden", "images/landingpage_club.jpg",
+model.addPlace(june25Date, new Place("Volksgarden", "images/clubs/volksgarten_inside2.jpg",
     "578", "2784"));
-model.addPlace(june25Date,new Place("Club bob loves clubbing", "images/landingpage_bar.jpg", "5622", "43"));
+model.addPlace(june25Date, new Place("Loco", "images/clubs/loco.jpg",
+    "69", "12940"));
+model.addPlace(june25Date, new Place("Grelle Forelle", "images/clubs/grelleforelle.jpg",
+    "69", "12940"));
 const june24Date = new Date("Friday, 24 June", "24.6");
 model.addDates(june24Date);
-model.addPlace(june24Date, new Place("Praterdome", "images/landingpage_club.jpg",
+model.addPlace(june24Date, new Place("Praterdome", "images/clubs/praterdom.jpg",
     "632", "30000"));
-model.addPlace(june24Date, new Place("Volksgarden", "images/landingpage_club.jpg",
+model.addPlace(june24Date, new Place("Volksgarden", "images/clubs/volksgarten_inside2.jpg",
     "578", "2784"));
-model.addPlace(june24Date, new Place("Crazy Brudi", "images/landingpage_club.jpg",
+model.addPlace(june24Date, new Place("Loco", "images/clubs/loco.jpg",
+    "69", "12940"));
+model.addPlace(june24Date, new Place("Flex", "images/clubs/flex.jpg",
+    "69", "12940"));
+model.addPlace(june24Date, new Place("Grelle Forelle", "images/clubs/grelleforelle.jpg",
     "69", "12940"));
 const june23Date = new Date("Thursday, 23 June", "23.6");
 model.addDates(june23Date)
-model.addPlace(june23Date, new Place("Praterdome", "images/landingpage_club.jpg",
+model.addPlace(june23Date, new Place("Volksgarden", "images/clubs/volksgarten_inside1.jpg",
     "632", "30000"));
-model.addPlace(june23Date, new Place("Crazy Brudi", "images/landingpage_club.jpg",
+model.addPlace(june23Date, new Place("Flex", "images/clubs/flex.jpg",
+    "69", "12940"));
+model.addPlace(june23Date, new Place("Loco", "images/clubs/loco.jpg",
     "69", "12940"));
 
 module.exports = model;

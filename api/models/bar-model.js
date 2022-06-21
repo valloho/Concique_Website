@@ -115,24 +115,33 @@ class BarModel {
 const modelBar = new BarModel();
 const june25Date = new Date("Saturday, 25 June", "25.6", );
 modelBar.addDates(june25Date);
-modelBar.addPlace(june25Date, new Place("Praterdome", "images/landingpage_club.jpg",
-    "632", "30000"));
-modelBar.addPlace(june25Date, new Place("Volksgarden", "images/landingpage_club.jpg",
-    "578", "2784"));
-modelBar.addPlace(june25Date,new Place("Club bob loves clubbing", "images/landingpage_bar.jpg", "5622", "43"));
+modelBar.addPlace(june25Date, new Place("Moby Dick", "images/bars/moby-dick.jpg",
+    "69", "12940"));
+modelBar.addPlace(june25Date, new Place("Loos Bar", "images/bars/loos-bar.jpg",
+    "69", "12940"));
 const june24Date = new Date("Friday, 24 June", "24.6");
 modelBar.addDates(june24Date);
-modelBar.addPlace(june24Date, new Place("Praterdome", "images/landingpage_club.jpg",
+modelBar.addPlace(june24Date, new Place("Eissalon Bar", "images/bars/eissalon-bar.jpg",
     "632", "30000"));
-modelBar.addPlace(june24Date, new Place("Volksgarden", "images/landingpage_club.jpg",
-    "578", "2784"));
-modelBar.addPlace(june24Date, new Place("Crazy Brudi", "images/landingpage_club.jpg",
+modelBar.addPlace(june25Date, new Place("Kleinod", "images/bars/kleinod.jpg",
+    "632", "30000"));
+modelBar.addPlace(june25Date, new Place("Luster", "images/bars/luster.jpg",
+    "632", "30000"));
+modelBar.addPlace(june24Date, new Place("Moby Dick", "images/bars/moby-dick.jpg",
+    "69", "12940"));
+modelBar.addPlace(june24Date, new Place("Loos Bar", "images/bars/loos-bar.jpg",
     "69", "12940"));
 const june23Date = new Date("Thursday, 23 June", "23.6");
 modelBar.addDates(june23Date)
-modelBar.addPlace(june23Date, new Place("Praterdome", "images/landingpage_club.jpg",
+modelBar.addPlace(june23Date, new Place("Eissalon Bar", "images/bars/eissalon-bar.jpg",
     "632", "30000"));
-modelBar.addPlace(june23Date, new Place("Crazy Brudi", "images/landingpage_club.jpg",
+modelBar.addPlace(june23Date, new Place("Kleinod", "images/bars/kleinod.jpg",
+    "632", "30000"));
+modelBar.addPlace(june23Date, new Place("Luster", "images/bars/luster.jpg",
+    "632", "30000"));
+modelBar.addPlace(june23Date, new Place("Moby Dick", "images/bars/moby-dick.jpg",
+    "69", "12940"));
+modelBar.addPlace(june23Date, new Place("Loos Bar", "images/bars/loos-bar.jpg",
     "69", "12940"));
 
 module.exports = modelBar;
