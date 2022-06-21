@@ -16,10 +16,6 @@ class searchBarModel {
     getEvents() {
         return events;
     }
-
-
-
-
 }
 let events = [
 
