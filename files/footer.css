@@ -24,7 +24,7 @@ footer {
 
 .footer_list {
     width: 100%;
-    font-size: 30px;
+    font-size: 1.2em;
     padding-top: 1em;
     list-style: none;
 }
@@ -62,9 +62,13 @@ footer {
     text-decoration: none;
 }
 
+.footer_options:hover, .footer_icons:hover{
+    color: white;
+}
+
 #copyright {
     color: var(--bright-color);
-    font-size: 20px;
+    font-size: 0.8em;
     text-align: center;
     padding-top: 2em;
     padding-bottom: 2em;

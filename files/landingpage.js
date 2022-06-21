@@ -14,9 +14,3 @@ fetch('https://instagram-data1.p.rapidapi.com/followers?username=valloho', optio
     .catch(err => console.error(err));
 
  */
-/*
-function myFunction() {
-    myRef = window.open('login.html','_self','height=500,width=400,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no, status=yes');
-    myRef.focus()
-}
- */
