@@ -1,20 +1,75 @@
-class Place {}
+class Place {
+
+}
+
+class PlaceOfTheWeek{
+    constructor(name, image, likes, views, id) {
+        this.name = name;
+        this.image = image;
+        this.likes = likes;
+        this.views = views;
+        this.id = id;
+    }
+}
 
 class ExplorePage{
-    addPlaceOfTheWeekToDOM(place){
+
+    async addPlaceOfTheWeekToDOM(place){
         let divPOTW = document.createElement("div");
         divPOTW.setAttribute("class", "clubOfTheWeek");
-
         let centerDiv1 = document.createElement("div");
         centerDiv1.setAttribute("class", "center");
         let centerDiv2 = document.createElement("div");
         centerDiv2.setAttribute("class", "center");
         divPOTW.append(centerDiv1);
+        let centerDiv3 = document.createElement("div");
+        centerDiv3.setAttribute("class", "center");
+        let centerDiv4 = document.createElement("div");
+        centerDiv4.setAttribute("class", "center");
+
+        const options = {
+            method: 'GET',
+            headers: {
+                'X-RapidAPI-Key': 'da73b3c571msh5f5fd1650d7a56ep105333jsn590016455521',
+                'X-RapidAPI-Host': 'instagram-data1.p.rapidapi.com'
+            }
+        };
+
+
+        const response = await fetch('https://instagram-data1.p.rapidapi.com/followers?username=praterdomevienna', options)
+        const likesJSON = await response.json();
+        const likes = likesJSON['count'];
 
         let imgPOTW = document.createElement("img");
         imgPOTW.setAttribute("src", place.image);
-        imgPOTW.setAttribute("class", "cotwIMG");
+        imgPOTW.className = "cotwIMG";
         centerDiv1.append(imgPOTW);
+
+        divPOTW.append(centerDiv3);
+        let iconBorder1 = document.createElement("div");
+        iconBorder1.setAttribute("class", "iconBorder");
+        centerDiv3.append(iconBorder1);
+
+        let heart = document.createElement("ion-icon");
+        heart.setAttribute("name", "heart");
+        iconBorder1.append(heart);
+        let likesValue = document.createElement("label");
+        likesValue.setAttribute("class", "values");
+        likesValue.append(likes);
+        iconBorder1.append(likesValue);
+
+        divPOTW.append(centerDiv4);
+        let iconBorder2 = document.createElement("div");
+        iconBorder2.setAttribute("class", "iconBorder");
+        centerDiv4.append(iconBorder2);
+
+        let eye = document.createElement("ion-icon");
+        eye.setAttribute("name", "eye");
+        iconBorder2.append(eye);
+        let viewsValue = document.createElement("label");
+        viewsValue.setAttribute("class", "values");
+        viewsValue.append(place.views);
+        iconBorder2.append(viewsValue);
 
         document.querySelector("#container").append(centerDiv2);
 
@@ -110,6 +165,8 @@ class ExplorePage{
 
 document.addEventListener("DOMContentLoaded", async function () {
     const explorePage = new ExplorePage();
+    explorePage.addPlaceOfTheWeekToDOM(new PlaceOfTheWeek("Praterdome", "images/landingpage_club.jpg", "", "30000", "1"))
+
 
     const response = await fetch(`/api/club/dates/`);
     if (!response.ok) {
@@ -121,6 +178,5 @@ document.addEventListener("DOMContentLoaded", async function () {
         const places = await placesJSON.json();
         explorePage.addToDOM(date, places);
     }
-
 
 });
