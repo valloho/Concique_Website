@@ -1,12 +1,12 @@
 class Event {
 
-    constructor(name, image, id, likes, views, location, dates, tags) {
+    constructor(name, image, likes, views, id, location, dates, tags) {
 
         this.name = name;
         this.image = image;
-        this.id = id;
         this.likes = likes;
         this.views = views;
+        this.id = id;
         this.location = location;
         this.dates = dates;
         this.tags = tags;
@@ -142,6 +142,7 @@ class SearchPage {
             }
 
             // Check dates
+
             let correctDate = false;
 
             for (let i = 0; i < event.dates.length; i++) {
@@ -157,6 +158,7 @@ class SearchPage {
 
                 continue;
             }
+
 
             // Check tags
             let correctTag = false;
@@ -271,6 +273,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
         )
     ]
 
+
+
     console.log(clubTags[1]);
     let searchPage = new SearchPage();
     searchPage.addEventType(eventType);
@@ -280,9 +284,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
     let form = document.getElementById("inputForm");
     let eventList = [];
 
-    form.addEventListener("submit", function (e) {
+    form.addEventListener("submit", async function (e) {
 
         e.preventDefault();
+
         searchPage.deleteAlerts();
 
         // Delete existing articles
@@ -301,8 +306,18 @@ document.addEventListener("DOMContentLoaded", function (event) {
         let tag = document.getElementById("what").value;
         console.log(tag);
 
+        // Fetch Events
+        const response = await fetch(`/api/events`);
+
+        if (!response.ok) {
+
+            throw new Error(`Error occurred. Status: ${response.status}`);
+        }
+
+        const allEvents = await response.json();
+
         // Filter events
-        eventList = searchPage.filterEvents(events, location, date, tag);
+        eventList = searchPage.filterEvents(allEvents, location, date, tag);
 
         // Add 2 events
         let itemsCount = eventList.length < 2 ? eventList.length : 2;
