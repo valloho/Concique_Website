@@ -12,8 +12,9 @@
     --main-color: #09262F;
     --bar-color: #F8F26D;
     --club-color: #A7BFD4;
-    --eventlocation-color: #4BC9A7;
+    --club-color-light: #294652;
     --shadow-color: #071e26;
+    --bar-color-light: #858238;
 }
 
 #logo {
@@ -82,7 +83,7 @@ li {
 .scrollDown {
     grid-area: content;
     color: var(--bar-color);
-    border-top: 3px solid #294652;
+    border-top: 3px solid var(--bar-color-light);
     border-radius: 3em;
     background-color: var(--main-color);
     box-shadow: 0 -30px 40px var(--shadow-color);
