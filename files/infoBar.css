@@ -79,6 +79,14 @@ li {
     left: 50%;
     transform: translate(-50%);
 }
+
+#description {
+    grid-area: content;
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    transform: translate(-50%);
+}
 /*
 .carousel {
     border-radius: 30px;
@@ -101,7 +109,7 @@ li {
     padding: 0;
 }
 
- */
+
 
 #moreInfo {
     text-decoration: none;
@@ -114,6 +122,9 @@ li {
     left: 50%;
     transform: translate(-50%);
 }
+ */
+
+
 
 #scrollDownIcon {
     grid-area: content;
@@ -124,5 +135,9 @@ li {
     width: 30px;
     height: 30px;
     background: transparent;
+}
+
+:hover {
+    color: var(--bar-color);
 }
 

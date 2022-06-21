@@ -24,8 +24,9 @@ class infoBar {
         img.setAttribute("class", "bar_img");
         h1.append(img);
 
-
-
+        let p = document.createElement("p");
+        p.append(place.description); //missing still
+        document.getElementById("description").append(p);
     }
 
 }
