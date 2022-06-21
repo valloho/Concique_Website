@@ -11,7 +11,7 @@
     padding: 0;
     font-family: 'Darker Grotesque', sans-serif;
     background-color: var(--dark-color);
-    color: var(--bright-color);!important;
+    color: var(--bright-color);
 }
 
 body {
@@ -48,11 +48,11 @@ label {
 #login_button {
     font-weight: 500;
     font-size: 1.1em;
+    color: var(--bright-color);
 }
 
 #username, #password, #login_button, .btn {
     border-color: var(--bright-color);
-    color: var(--bright-color);
 }
 
 #login {

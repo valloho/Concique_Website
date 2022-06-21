@@ -1,15 +1,4 @@
-class Date {
-    constructor(dateName, dateNumber, id, ...places) {
-        this.dateName = dateName;
-        this.dateNumber = dateNumber;
-        this.id = id;
-        this.places = places;
-    }
-}
-
-class Place {
-
-}
+class Place {}
 
 class ExplorePage{
     addPlaceOfTheWeekToDOM(place){
