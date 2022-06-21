@@ -10,8 +10,9 @@
   <link rel="stylesheet" href="footer.css">
   <script src="exploreBar.js"></script>
 </head>
+<body>
 <div class="containerino">
-  <body>
+
 <header id="headerTop">
   <nav class="navbar fixed-top navbar-expand-lg navbar-custom bg-custom">
     <a class="navbar-brand" href="#headerTop">
@@ -63,16 +64,20 @@
 <main>
   <div class="clubOfTheWeek" id="placeOfTheWeek">
     <h1>Bar of the Week</h1>
-        <label id="nameOfCOTW"></label>
+    <div class="center">
+        <label id="nameOfCOTW">Barname</label>
         <div class="circle">
           <div class="arrow"></div>
         </div>
-      <div class="scrollDown">
-          <a id="exploreMoreText" href="#otherBars">explore more</a>
-            <ion-icon name="chevron-down" id="scrollDownIcon"></ion-icon>
       </div>
     </div>
 </main>
+  <div class="scrollDown">
+    <a id="exploreMoreText" href="#otherBars">explore more</a>
+    <a href="#otherBars">
+      <ion-icon name="chevron-down" id="scrollDownIcon"></ion-icon>
+    </a>
+  </div>
 <div>
   <h2 id="otherBars">Other Bars</h2>
   <div class="otherClubsContainer" id="otherClubsContainerID">
@@ -109,6 +114,7 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-</body>
+
 </div>
+</body>
 </html>

@@ -25,12 +25,28 @@ ul {
 }
 
 h1 {
-    text-align: center;
-    color: var(--club-color);
-    margin: 2em;
+    color: var(--bar-color);
+    text-align: center!important;
     padding-bottom: 1em;
     padding-top: 1em;
     font-size: 2.5em !important;
+}
+
+h2 {
+    text-align: center;
+    font-size: 1em;
+}
+
+h3{
+    margin: 1em;
+    font-size: 2.5em;
+    color: var(--bar-color);
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .containerino {
@@ -39,8 +55,8 @@ h1 {
     width: 100vw;
     grid-template:
             "header" auto
-            "img" 60%
-            "content" 30%;
+            "img" 75%
+            "content" 15%;
 }
 
 header {
@@ -55,7 +71,8 @@ header {
 }
 
 main {
-    grid-area: img;
+    display: grid;
+
 }
 
 li {
@@ -64,7 +81,7 @@ li {
 
 .scrollDown {
     grid-area: content;
-    color: var(--club-color);
+    color: var(--bar-color);
     border-top: 3px solid #294652;
     border-radius: 3em;
     background-color: var(--main-color);
@@ -75,7 +92,7 @@ li {
     text-decoration: none;
     font-size: 1.2em;
     font-weight: 600;
-    color: var(--club-color);
+    color: var(--bar-color);
     background: transparent;
     position: absolute;
     bottom: 4%;
@@ -93,3 +110,105 @@ li {
     height: 30px;
     background: transparent;
 }
+
+.arrow{
+    border:solid #F8F26D;
+    border-width: 0 2px 2px 0;
+    height: 5px;
+    width: 5px;
+    display: inline-block;
+    padding: 2px;
+    margin-top: 9px;
+    margin-left: 7px;
+    transform: rotate(-45deg);
+}
+.circle{
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #F8F26D;
+    margin-left: 5px;
+    margin-top: 10px;
+    background-color: #09262F;
+}
+.circle:hover {
+    background-color: #071e26;
+}
+
+.circle:active{
+    background-color: #F8F26D;
+}
+
+.circle:active > .arrow{
+    border:solid #09262F;
+    border-width: 0 2px 2px 0;
+    height: 5px;
+    width: 5px;
+    display: inline-block;
+    padding: 2px;
+    margin-top: 9px;
+    margin-left: 7px;
+    transform: rotate(-45deg);
+}
+
+.arrow:active{
+    border:solid #09262F;
+    border-width: 0 2px 2px 0;
+    height: 5px;
+    width: 5px;
+    display: inline-block;
+    padding: 2px;
+    margin-top: 9px;
+    margin-left: 7px;
+    transform: rotate(-45deg);
+}
+
+#nameOfCOTW{
+    background-color: #09262F;
+    color: #F8F26D;
+    font-size: 2.5em;
+}
+
+.dateText{
+    border-radius: 20px;
+    border: 2px solid #F8F26D;
+    text-align: center;
+}
+
+article{
+    margin-top: 2em;
+    margin-bottom: 2em;
+    color: #F8F26D;
+}
+.articleText{
+    font-size: 2em;
+}
+
+.otherClubsImg{
+    border-radius: 30px;
+    width: 15em;
+    height: auto;
+}
+
+.iconBorder{
+    border: 1px solid #F8F26D;
+    width: auto;
+    border-radius: 10px;
+    margin-bottom: 5px;
+}
+
+#heart{
+    padding-top: 5px;
+    padding-left: 5px;
+}
+#eye{
+    padding-top: 5px;
+    padding-left: 5px;
+}
+
+.values{
+    padding-left: 1px;
+    font-size: 1.5em;
+    margin-right: 5px;
+}
+
