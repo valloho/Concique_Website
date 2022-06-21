@@ -198,23 +198,15 @@ class SearchPage {
 
 document.addEventListener("DOMContentLoaded", function (event) {
 
-    const eventLocations = [1, 2, 6, 7, 9, 12];
-
-    const clubTags = [
-
-        "nightClub",
-        "danceClub",
-        "party",
-        "music",
-        "electronic"
-    ]
+    const eventLocations = [1, 6, 7];
 
     const barTags = [
 
-        "beerBar",
-        "irishPubBar",
-        "musicBar",
-        "wineBar"
+        "cocktail",
+        "eatery",
+        "reservations",
+        "coffee",
+        "ice"
     ]
 
     let events = [
@@ -271,10 +263,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
         )
     ]
 
-    console.log(clubTags[1]);
     let searchPage = new SearchPage();
     searchPage.addEventLocations(eventLocations);
-    searchPage.addEventTags(clubTags);
+    searchPage.addEventTags(barTags);
 
     let form = document.getElementById("inputForm");
     let eventList = [];

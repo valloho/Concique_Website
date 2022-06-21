@@ -20,54 +20,54 @@ class searchBarModel {
 let events = [
 
     new Event(
-        "Praterdome",
-        "images/clubs/praterdom.jpg",
+        "Loos Bar",
+        "images/bars/loos-bar.jpg",
         1,
         43,
         312,
-        "District 2",
-        ["2022-06-24", "2022-06-25"],
-        ["nightClub", "party"]
+        "District 1",
+        ["2022-06-20", "2022-06-21","2022-06-22","2022-06-23", "2022-06-24", "2022-06-25", "2022-06-26"],
+        ["coffee", "cocktail", "reservations"]
     ),
     new Event(
-        "Volksgarten",
-        "images/clubs/volksgarten_inside1.jpg",
+        "Moby Dick",
+        "images/bars/moby-dick.jpg",
         2,
         69,
         420,
-        "District 1",
-        ["2022-06-23", "2022-06-24", "2022-06-25"],
-        ["nightClub", "danceClub"]
+        "District 7",
+        ["2022-06-20", "2022-06-21","2022-06-22","2022-06-23", "2022-06-24", "2022-06-25"],
+        ["cocktail", "eatery"]
     ),
     new Event(
-        "Loco",
-        "images/clubs/loco.jpg",
+        "Luster",
+        "images/bars/luster.jpg",
         3,
         187,
         666,
-        "District 9",
-        ["2022-06-20", "2022-06-21", "2022-06-22", "2022-06-23", "2022-06-24", "2022-06-25", "2022-06-26"],
-        ["nightClub"]
+        "District 6",
+        ["2022-06-21", "2022-06-22", "2022-06-23", "2022-06-24", "2022-06-25"],
+        ["cocktail", "eatery", "reservations"]
     ),
     new Event(
-        "Flex",
-        "images/clubs/flex.jpg",
+        "Kleinod",
+        "images/bars/kleinod.jpg",
         4,
         187,
         666,
         "District 1",
-        ["2022-06-23", "2022-06-24"],
-        ["nightClub", "music"]
+        ["2022-06-20", "2022-06-21","2022-06-22","2022-06-23", "2022-06-24", "2022-06-25", "2022-06-26"],
+        ["reservation", "cocktail", "eatery"]
     ),
     new Event(
-        "Grelle Forelle",
-        "images/clubs/grelleforelle.jpg",
+        "Eissalon Bar",
+        "images/bars/eissalon-bar.jpg",
         5,
         187,
         666,
-        "District 12",
-        ["2022-06-24", "2022-06-25"],
-        ["nightClub", "music", "electronic"]
+        "District 6",
+        ["2022-06-21","2022-06-22","2022-06-23", "2022-06-24", "2022-06-25"],
+        ["ice", "cocktails"]
     )];
 
 
