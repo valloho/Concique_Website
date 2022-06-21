@@ -30,7 +30,7 @@ class ExplorePage{
         const options = {
             method: 'GET',
             headers: {
-                'X-RapidAPI-Key': 'da73b3c571msh5f5fd1650d7a56ep105333jsn590016455521',
+                'X-RapidAPI-Key': 'ee0d812f91msh96ed092006da3b3p1ff48cjsn84643d796aa9',
                 'X-RapidAPI-Host': 'instagram-data1.p.rapidapi.com'
             }
         };
