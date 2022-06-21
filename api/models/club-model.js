@@ -16,19 +16,7 @@ class Place {
     }
 }
 
-
-class ClubOfTheWeek{
-    constructor(name, image, likes, views, id) {
-        this.name = name;
-        this.image = image;
-        this.likes = likes;
-        this.views = views;
-        this.id = id;
-    }
-}
-
 class ClubModel {
-    static COTW_ID = 1;
     static DATE_ID = 1;
     static PLACE_ID = 1;
 
@@ -46,10 +34,6 @@ class ClubModel {
 
     getDates() {
         return Array.from(this.places.keys());
-    }
-
-    addClubOfTheWeek(clubOfTheWeek) {
-        clubOfTheWeek.id = ClubModel.COTW_ID++;
     }
 
     addPlace(date, place) {
@@ -104,13 +88,6 @@ class ClubModel {
         return place;
     }
 
-    getClubOfTheWeek(id){
-        if (!id) {
-            throw new Error(`ID${id} doesn't exist`);
-        }
-        return clubOfTheWeeK1;
-    }
-
     createPlace(date, place) {
         this.addPlace(date, place);
         return place;
@@ -157,8 +134,5 @@ model.addPlace(june23Date, new Place("Praterdome", "images/landingpage_club.jpg"
     "632", "30000"));
 model.addPlace(june23Date, new Place("Crazy Brudi", "images/landingpage_club.jpg",
     "69", "12940"));
-const clubOfTheWeeK1 = new ClubOfTheWeek("Praterdome", "images/landingpage_club.jpg",
-    "632", "30000", "2")
-model.addClubOfTheWeek(clubOfTheWeeK1);
 
 module.exports = model;

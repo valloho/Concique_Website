@@ -2,7 +2,8 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const express = require('express');
 
-const placeRouter = require('./api/routes/club-routes');
+const clubRouter = require('./api/routes/club-routes');
+const barRouter = require('./api/routes/bar-routes');
 
 const app = express();
 const port = process.env.PORT ?? 3000;
@@ -12,7 +13,8 @@ app.use(express.static(path.join(__dirname, '/files')));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(bodyParser.json());
-app.use('/api', placeRouter);
+app.use('/api', clubRouter);
+app.use('/api', barRouter);
 
 /*Session Management*/
 

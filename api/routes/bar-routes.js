@@ -1,15 +1,14 @@
 const { Router } = require('express');
 const controller = require('../controllers/bar-controller');
 
-const routesBar = Router();
+const routes = Router();
 
-routesBar.get('/dates', controller.getDates);
-routesBar.get('/dates/:dateNumber/places', controller.getDatePlaces);
-routesBar.get('/places/:id', controller.getPlace)
-routesBar.get('/clubOfTheWeek', controller.getClubOfTheWeek);
+routes.get('/bar/dates', controller.getDates);
+routes.get('/bar/dates/:dateNumber/places', controller.getDatePlaces);
+routes.get('/bar/places/:id', controller.getPlace)
 
-routesBar.post('/dates/:dateNumber/places', controller.createPlace);
-routesBar.put('/places/:id', controller.updatePlace)
-routesBar.delete('/places/:id', controller.deletePlace)
+routes.post('/bar/dates/:dateNumber/places', controller.createPlace);
+routes.put('/bar/places/:id', controller.updatePlace)
+routes.delete('/bar/places/:id', controller.deletePlace)
 
-module.exports = routesBar;
+module.exports = routes;

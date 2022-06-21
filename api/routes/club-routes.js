@@ -3,13 +3,12 @@ const controller = require('../controllers/club-controller');
 
 const routes = Router();
 
-routes.get('/dates', controller.getDates);
-routes.get('/dates/:dateNumber/places', controller.getDatePlaces);
-routes.get('/places/:id', controller.getPlace)
-routes.get('/clubOfTheWeek', controller.getClubOfTheWeek);
+routes.get('/club/dates', controller.getDates);
+routes.get('/club/dates/:dateNumber/places', controller.getDatePlaces);
+routes.get('/club/places/:id', controller.getPlace)
 
-routes.post('/dates/:dateNumber/places', controller.createPlace);
-routes.put('/places/:id', controller.updatePlace)
-routes.delete('/places/:id', controller.deletePlace)
+routes.post('/club/dates/:dateNumber/places', controller.createPlace);
+routes.put('/club/places/:id', controller.updatePlace)
+routes.delete('/club/places/:id', controller.deletePlace)
 
 module.exports = routes;
