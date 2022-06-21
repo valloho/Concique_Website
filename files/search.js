@@ -196,7 +196,7 @@ class SearchPage {
 
 document.addEventListener("DOMContentLoaded", function (event) {
 
-    let eventType = "Club";
+    let eventType = "Bar";
 
     const eventLocations = [1, 2, 3, 4, 5];
 
