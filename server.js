@@ -4,6 +4,7 @@ const express = require('express');
 
 const clubRouter = require('./api/routes/club-routes');
 const barRouter = require('./api/routes/bar-routes');
+const searchClubRouter = require('./api/routes/searchClub-routes');
 
 const app = express();
 const port = process.env.PORT ?? 3000;
@@ -15,6 +16,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use('/api', clubRouter);
 app.use('/api', barRouter);
+app.use('/api', searchClubRouter);
 
 /*Session Management*/
 
