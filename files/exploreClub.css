@@ -42,6 +42,7 @@ body{
 
 .clubOfTheWeek{
     grid-area: clubOfTheWeek;
+    color: #A7BFD4;
 }
 
 .cotwIMG{

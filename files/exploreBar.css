@@ -41,6 +41,7 @@ body{
 
 .clubOfTheWeek{
     grid-area: clubOfTheWeek;
+    color: #F8F26D;
 }
 
 .cotwIMG{
@@ -192,10 +193,12 @@ h3{
 #heart{
     padding-top: 5px;
     padding-left: 5px;
+    color: #F8F26D !important;
 }
 #eye{
     padding-top: 5px;
     padding-left: 5px;
+    color: #F8F26D !important;
 }
 .dateText{
     border-radius: 20px;
