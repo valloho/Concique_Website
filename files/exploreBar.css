@@ -1,62 +1,52 @@
-@import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300;400;500;600;700;800&display=swap');
 
-html, main, header {
-    background-color: #09262F;
+* { /* CSS Reset */
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
     font-family: 'Darker Grotesque', sans-serif;
+    background-color: var(--main-color);
 }
 
-html{
-    scroll-behavior: smooth;
+:root {
+    --main-color: #09262F;
+    --bar-color: #F8F26D;
+    --club-color: #A7BFD4;
+    --club-color-light: #294652;
+    --shadow-color: #071e26;
+    --bar-color-light: #858238;
+}
+
+iframe {
+    border-radius: 3em;
+}
+
+.clubOfTheWeek {
+    color: var(--bar-color);
+}
+#logo {
+    background: transparent;
+}
+
+ul {
+    background: transparent;
 }
 
 h1 {
+    color: var(--bar-color);
+    text-align: center!important;
+    font-size: 2.5em !important;
+}
+
+h2 {
     text-align: center;
-    background-color: #09262F;
-    color: #F8F26D;
-    margin: 0.25em;
-    padding-bottom: 1em;
-    padding-top: 0.5em;
+    font-size: 1em;
+}
+
+h3{
+    margin: 1em;
     font-size: 2.5em;
-}
-
-#logo {
-    height: 50px;
-}
-
-#burger {
-    color: #F8F26D;
-    width: 50px;
-    height: 50px;
-    float: right;
-}
-
-body{
-    margin-left: 0;
-    margin-right: 0;
-}
-
-.header {
-    grid-area: header;
-}
-
-.clubOfTheWeek{
-    grid-area: clubOfTheWeek;
-    color: #F8F26D;
-}
-
-.cotwIMG{
-    border-radius: 30px;
-    width: auto;
-    height: 25.125em;
-}
-#nameOfCOTW{
-    background-color: #09262F;
-    color: #F8F26D;
-    font-size: 2.5em;
-}
-
-.top{
-    margin: 0.5em;
+    color: var(--bar-color);
 }
 
 .center {
@@ -65,15 +55,68 @@ body{
     align-items: center;
 }
 
-.container{
-    height: 10vh;
-    grid-area: container;
-    margin-top: 2em;
-    border-top: 3px solid #294652;
-    border-radius: 3em;
-    background-color: #09262F;
-    box-shadow: 0 -40px 30px #071e26;
+.containerino {
+    display: grid;
+    height: 100vh;
+    width: 100vw;
+    grid-template:
+            "header" auto
+            "img" 75%
+            "content" 15%;
 }
+
+header {
+    grid-area: header;
+    height: 10vh;
+}
+
+
+.navbar {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+main {
+    display: grid;
+
+}
+
+li {
+    background: transparent;
+}
+
+.scrollDown {
+    grid-area: content;
+    color: var(--bar-color);
+    border-top: 3px solid var(--bar-color-light);
+    border-radius: 3em;
+    background-color: var(--main-color);
+    box-shadow: 0 -30px 40px var(--shadow-color);
+}
+
+#exploreMoreText {
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: var(--bar-color);
+    background: transparent;
+    position: absolute;
+    bottom: 4%;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+#scrollDownIcon {
+    grid-area: content;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+    width: 30px;
+    height: 30px;
+    background: transparent;
+}
+
 .arrow{
     border:solid #F8F26D;
     border-width: 0 2px 2px 0;
@@ -126,41 +169,16 @@ body{
     transform: rotate(-45deg);
 }
 
-.scrollDown {
-    color: #F8F26D;
-    font-weight: bold;
-}
-
-#scrollDownIcon {
-    width: 30px;
-    height: 30px;
-}
-#exploreMoreText{
-    margin-bottom: 0;
-}
-
-.otherClubs{
-    margin-top: 5em;
-    grid-area: otherClubs;
-
-}
-#otherClubsText{
-    font-size: 2.5em;
-    text-align: center;
-    color: #F8F26D;
-}
-a{
-    text-decoration: none;
-    color: inherit;
-}
-
-.otherClubsContainer{
-    height: 10vh;
-    margin-top: 2em;
-    border-top: 3px solid #294652;
-    border-radius: 3em;
+#nameOfCOTW{
     background-color: #09262F;
-    box-shadow: 0 -40px 30px #071e26;
+    color: #F8F26D;
+    font-size: 2.5em;
+}
+
+.dateText{
+    border-radius: 20px;
+    border: 2px solid #F8F26D;
+    text-align: center;
 }
 
 article{
@@ -172,17 +190,12 @@ article{
     font-size: 2em;
 }
 
-h3{
-    margin: 1em;
-    font-size: 2.5em;
-    color: #F8F26D;
-}
-
 .otherClubsImg{
     border-radius: 30px;
     width: 15em;
     height: auto;
 }
+
 .iconBorder{
     border: 1px solid #F8F26D;
     width: auto;
@@ -200,35 +213,16 @@ h3{
     padding-left: 5px;
     color: #F8F26D !important;
 }
-.dateText{
-    border-radius: 20px;
-    border: 2px solid #F8F26D;
-    text-align: center;
-}
+
 .values{
     padding-left: 1px;
     font-size: 1.5em;
     margin-right: 5px;
 }
 
-.loadMore{
-    color: #F8F26D;
-}
-#loadMoreText{
-    font-size: 1.5em;
-    font-weight: bold;
-}
-
-.swal-modal{
-    background-color: #09262F;
-}
-
-.swal-text{
-    color: #F8F26D;
-    text-align: center;
-    font-size: 30px;
-}
-.swall-title{
-    color: #F8F26D;
-    background-color: #F8F26D;
+.cotwIMG{
+    border-radius: 30px;
+    width: auto;
+    height: 20em;
+    padding-bottom: 1em;
 }
