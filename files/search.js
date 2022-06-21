@@ -198,8 +198,6 @@ class SearchPage {
 
 document.addEventListener("DOMContentLoaded", function (event) {
 
-    let eventType = "Bar";
-
     const eventLocations = [1, 2, 6, 7, 9, 12];
 
     const clubTags = [
@@ -277,7 +275,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
     console.log(clubTags[1]);
     let searchPage = new SearchPage();
-    searchPage.addEventType(eventType);
     searchPage.addEventLocations(eventLocations);
     searchPage.addEventTags(clubTags);
 
