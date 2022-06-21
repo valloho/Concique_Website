@@ -180,7 +180,7 @@ li {
 #nameOfCOTW{
     background-color: #09262F;
     color: #F8F26D;
-    font-size: 2.5em;
+    font-size: 2.5em !important;
 }
 
 .dateText{
@@ -195,12 +195,12 @@ article{
     color: #F8F26D;
 }
 .articleText{
-    font-size: 2em;
+    font-size: 2em !important;
 }
 
 .otherClubsImg{
     border-radius: 30px;
-    width: 15em;
+    width: 20em;
     height: auto;
 }
 
@@ -224,7 +224,7 @@ article{
 
 .values{
     padding-left: 1px;
-    font-size: 1.5em;
+    font-size: 1.5em !important;
     margin-right: 5px;
 }
 
