@@ -21,6 +21,10 @@ header {
     border-bottom-right-radius: 3em !important;
 }
 
+.navbar-collapse, .navbar-nav, .nav-item {
+    background-color: transparent !important;
+}
+
 nav {
     padding: 0;
 }
