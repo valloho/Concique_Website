@@ -2,7 +2,7 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const express = require('express');
 
-const placeRouter = require('./api/routes/place-routes');
+const placeRouter = require('./api/routes/club-routes');
 
 const app = express();
 const port = process.env.PORT ?? 3000;
@@ -13,18 +13,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(bodyParser.json());
 app.use('/api', placeRouter);
-
-app.get('/',function(req, res) {
-    res.sendFile(path.join(__dirname + '/files/landingpage.html'));
-});
-
-app.listen(port, (error) => {
-    if (error) {
-        console.log(error);
-    } else {
-        console.log(`Server listening at http://localhost:${port}`)
-    }
-});
 
 /*Session Management*/
 
@@ -59,7 +47,7 @@ let session;
 app.get('/',(req,res) => {
     session = req.session;
     if(session.userid){ //user is already logged in
-        res.sendFile(path.join(__dirname + '/files/exploreClub.html'));
+        res.sendFile(path.join(__dirname + '/files/landingpage.html'));
     } else
         res.sendFile(path.join(__dirname + '/files/login.html'))
 });
@@ -69,10 +57,28 @@ app.post('/user',(req,res) => {
         session = req.session;
         session.userid = req.body.username;
         console.log(req.session)
-        res.sendFile(path.join(__dirname + '/files/exploreClub.html'));
+        res.sendFile(path.join(__dirname + '/files/landingpage.html'));
     }
     else {
         res.send('Invalid username or password');
     }
 })
 
+app.listen(port, (error) => {
+    if (error) {
+        console.log(error);
+    } else {
+        console.log(`Server listening at http://localhost:${port}`)
+    }
+});
+/*
+function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+}
+ */

@@ -16,6 +16,14 @@
     --shadow-color: #071e26;
 }
 
+#logo {
+    background: transparent;
+}
+
+ul {
+    background: transparent;
+}
+
 h1 {
     text-align: center;
     color: var(--club-color);
