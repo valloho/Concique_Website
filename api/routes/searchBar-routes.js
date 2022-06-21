@@ -3,6 +3,6 @@ const controller = require('../controllers/searchBar-controller');
 
 const routesSearchBar = Router();
 
-routesSearchBar.get('/events', controller.getEvents);
+routesSearchBar.get('/barEvents', controller.getEvents);
 
 module.exports = routesSearchBar;
