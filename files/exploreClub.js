@@ -1,10 +1,3 @@
-class Batch {
-    constructor(number, id, ...dates) {
-        this.number = number;
-        this.id = id;
-        this.dates = dates;
-    }
-}
 class Date {
     constructor(dateName, dateNumber, id, ...places) {
         this.dateName = dateName;
@@ -15,13 +8,7 @@ class Date {
 }
 
 class Place {
-    constructor(name, image, likes, views, id) {
-        this.name = name;
-        this.image = image;
-        this.likes = likes;
-        this.views = views;
-        this.id = id;
-    }
+
 }
 
 class ExplorePage{
@@ -48,47 +35,28 @@ class ExplorePage{
         document.querySelector("#center").append(divPOTW);
     }
 
-    addBatches(batches){
-        try {
-            for (const batch of batches) {
-                this.addBatchToDOM(batch);
-                for (const date of batch.dates) {
-                    this.addDateToDOM(batch, date);
-                    for (const place of date.places) {
-                        this.addPlaceToDOM(batch, date, place)
-                    }
-                }
-            }
-        }catch (e){
-            swal("error", "No more days can be loaded, please try again tomorrow", "error")
+    addToDOM(date, places) {
+        this.addDateToDOM(date);
+
+        for (const place of places){
+            this.addPlaceToDOM(date, Object.assign(new Place(), place));
         }
     }
 
-    addBatchToDOM(batch){
-        let batchDiv = document.createElement("div");
-        batchDiv.setAttribute("name", batch.number);
-
-        let sectionsDiv = document.createElement("div");
-        sectionsDiv.setAttribute("id", batch.id);
-        batchDiv.append(sectionsDiv);
-
-        document.querySelector("#batches").append(batchDiv);
-    }
-
-    addDateToDOM(batch, date){
+    addDateToDOM(date){
         let newSection = document.createElement("section");
         newSection.setAttribute("id", date.id);
         newSection.setAttribute("class", "date");
 
         let newHeader = document.createElement("h3");
         newHeader.setAttribute("class", "dateText");
-        newHeader.append(date.date)
+        newHeader.append(date.dateName)
         newSection.append(newHeader);
 
-        document.getElementById(batch.id).append(newSection);
+        document.getElementById("batches").append(newSection);
     }
 
-    addPlaceToDOM(batch, date, place){
+    addPlaceToDOM(date, place){
         let newPlace = document.createElement("article");
         newPlace.setAttribute("id", place.id);
 
@@ -151,48 +119,19 @@ class ExplorePage{
 }
 
 
-document.addEventListener("DOMContentLoaded", function () {
-    let clubOfTheWeekDay1 = [
-            new Place("Praterdome","images/landingpage_club.jpg", "1", "632", "30000")
-    ];
-    let clubOfTheWeekDay2 =[
-            new Place("DJ Kahled's home", "images/landingpage_bar.jpg", "3", "74", "3321")
-    ]
-
-    let clubOfTheWeek = [clubOfTheWeekDay1, clubOfTheWeekDay2];
-
-
-    let batchClub1 = [
-        new Batch("batch1", "batchClub1",
-            new Date("Friday, 17 June", "17/6/22",
-                new Place("Praterdome","images/landingpage_club.jpg", "1", "632", "30000"),
-                new Place("Crazy Brudi", "images/landingpage_club.jpg", "2", "69", "1294")),
-            new Date("Saturday, 18 June", "18/6/22",
-                new Place("DJ Kahled's home", "images/landingpage_bar.jpg", "3", "74", "3321"),
-                new Place("Club bob loves clubbing", "images/landingpage_bar.jpg", "4", "43", "5622")))
-    ];
-    let batchClub2 = [
-        new Batch("batch2", "batchClub2",
-            new Date("Sunday, 19 June", "19/6/22",
-                new Place("Praterdome","images/landingpage_club.jpg", "5", "632", "30000")),
-            new Date("Monday, 20 June", "20/6/22",
-                new Place("Club bob loves clubbing", "images/landingpage_bar.jpg", "6", "43", "5622")))
-    ];
-    let batchesClub = [batchClub1, batchClub2];
-
+document.addEventListener("DOMContentLoaded", async function () {
     const explorePage = new ExplorePage();
-    explorePage.addPlaceOfTheWeekToDOM(clubOfTheWeekDay1[0]);
-    let batchNumber = 0;
-    explorePage.addBatches(batchesClub[batchNumber]);
 
-    let moreDays = document.getElementById('loadMoreText');
-    moreDays.addEventListener("click", function (){
-        batchNumber++;
-        explorePage.addBatches(batchesClub[batchNumber]);
-    });
-    let scrollDownIcon = document.getElementById('scrollDownIconArea');
-    scrollDownIcon.addEventListener("click", function (){
-        batchNumber++;
-        explorePage.addBatches(batchesClub[batchNumber]);
-    });
+    const response = await fetch(`/api/dates/`);
+    if (!response.ok) {
+        throw new Error(`Fetch error, something went wrong. status: ${response.status}`);
+    }
+    const dates = await response.json();
+    for (const date of Array.from(dates).reverse()) {
+        const placesJSON = await fetch(`/api/dates/${date.dateNumber}/places`);
+        const places = await placesJSON.json();
+        explorePage.addToDOM(date, places);
+    }
+
+
 });

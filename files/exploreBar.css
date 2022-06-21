@@ -33,13 +33,6 @@ h1 {
 body{
     margin-left: 0;
     margin-right: 0;
-    display: grid;
-    grid-template-rows: 10% 90%;
-    grid-template-areas:
-            "header"
-            "clubOfTheWeek"
-            "otherClubs";
-    height: 100%;
 }
 
 .header {
