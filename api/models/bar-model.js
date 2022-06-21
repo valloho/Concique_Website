@@ -1,19 +1,3 @@
-/*
-class Category {
-    constructor(name, id) {
-        this.name = name;
-        this.id = id;
-    }
-}
-
-
-class Batch {
-    constructor(number, id) {
-        this.number = number;
-        this.id = id;
-    }
-}
-*/
 class Date {
     constructor(dateName, dateNumber, id) {
         this.dateName = dateName;
@@ -32,19 +16,7 @@ class Place {
     }
 }
 
-
-class BarOfTheWeek{
-    constructor(name, image, likes, views, id) {
-        this.name = name;
-        this.image = image;
-        this.likes = likes;
-        this.views = views;
-        this.id = id;
-    }
-}
-
 class BarModel {
-    static COTW_ID = 1;
     static DATE_ID = 1;
     static PLACE_ID = 1;
 
@@ -62,10 +34,6 @@ class BarModel {
 
     getDates() {
         return Array.from(this.places.keys());
-    }
-
-    addClubOfTheWeek(clubOfTheWeek) {
-        clubOfTheWeek.id = BarModel.COTW_ID++;
     }
 
     addPlace(date, place) {
@@ -120,13 +88,6 @@ class BarModel {
         return place;
     }
 
-    getClubOfTheWeek(id){
-        if (!id) {
-            throw new Error(`ID${id} doesn't exist`);
-        }
-        return barOfTheWeeK1;
-    }
-
     createPlace(date, place) {
         this.addPlace(date, place);
         return place;
@@ -173,9 +134,5 @@ modelBar.addPlace(june23Date, new Place("Praterdome", "images/landingpage_club.j
     "632", "30000"));
 modelBar.addPlace(june23Date, new Place("Crazy Brudi", "images/landingpage_club.jpg",
     "69", "12940"));
-
-const barOfTheWeeK1 = new ClubOfTheWeek("Praterdome", "images/landingpage_club.jpg",
-    "632", "30000", "2");
-modelBar.addClubOfTheWeek(barOfTheWeeK1);
 
 module.exports = modelBar;

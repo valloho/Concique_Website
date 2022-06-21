@@ -111,13 +111,13 @@ class ExplorePage{
 document.addEventListener("DOMContentLoaded", async function () {
     const explorePage = new ExplorePage();
 
-    const response = await fetch(`/api/dates/`);
+    const response = await fetch(`/api/club/dates/`);
     if (!response.ok) {
         throw new Error(`Fetch error, something went wrong. status: ${response.status}`);
     }
     const dates = await response.json();
     for (const date of Array.from(dates).reverse()) {
-        const placesJSON = await fetch(`/api/dates/${date.dateNumber}/places`);
+        const placesJSON = await fetch(`/api/club/dates/${date.dateNumber}/places`);
         const places = await placesJSON.json();
         explorePage.addToDOM(date, places);
     }

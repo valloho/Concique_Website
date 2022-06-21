@@ -3,10 +3,6 @@ const model = require("../models/bar-model");
 class BarController {
     static REQUIRED = ["name", "image", "likes", "views"];
 
-    getClubOfTheWeek(req, res) {
-        res.send(model.getClubOfTheWeek())
-    }
-
     getDates(req, res) {
         res.send(model.getDates());
     }
