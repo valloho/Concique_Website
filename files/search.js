@@ -200,15 +200,15 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
     let eventType = "Bar";
 
-    const eventLocations = [1, 2, 3, 4, 5];
+    const eventLocations = [1, 2, 6, 7, 9, 12];
 
     const clubTags = [
 
         "nightClub",
         "danceClub",
-        "karaokeClub",
-        "adultClub",
-        "sportsClub"
+        "party",
+        "music",
+        "electronic"
     ]
 
     const barTags = [
