@@ -1,19 +1,4 @@
-/*
-class Category {
-    constructor(name, id) {
-        this.name = name;
-        this.id = id;
-    }
-}
 
-
-class Batch {
-    constructor(number, id) {
-        this.number = number;
-        this.id = id;
-    }
-}
-*/
 class Date {
     constructor(dateName, dateNumber, id) {
         this.dateName = dateName;

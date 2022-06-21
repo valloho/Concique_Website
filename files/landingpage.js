@@ -12,5 +12,4 @@ fetch('https://instagram-data1.p.rapidapi.com/followers?username=valloho', optio
     .then(response => response.json())
     .then(response => console.log(response['count']))
     .catch(err => console.error(err));
-
  */

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="">
+<head>
+  <meta charset="UTF-8">
+  <title>Concique - Explore Bars</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="test.css">
+  <link rel="stylesheet" href="header.css">
+  <link rel="stylesheet" href="footer.css">
+  <script src="exploreBar.js"></script>
+</head>
+<div class="containerino">
+  <body>
+<header id="headerTop">
+  <nav class="navbar fixed-top navbar-expand-lg navbar-custom bg-custom">
+    <a class="navbar-brand" href="#headerTop">
+      <img src="images/logos/concique_logo_blue.png" alt="concique_logo" id="logo">
+    </a>
+    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="toggler-icon top-bar"></span>
+      <span class="toggler-icon middle-bar"></span>
+      <span class="toggler-icon bottom-bar"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+
+          <a class="nav-link" href="exploreClub.html">
+            <ion-icon name="eye" class="headerIcons"></ion-icon>
+            Explore
+          </a>
+        </li>
+        <div class="headerLine"></div>
+        <li class="nav-item">
+          <a class="nav-link" href="search.html">
+            <ion-icon name="search" class="headerIcons"></ion-icon>
+            Search
+          </a>
+        </li>
+        <div class="headerLine"></div>
+        <li class="nav-item">
+          <a class="nav-link" href="about_us.html">
+            <ion-icon name="people" class="headerIcons"></ion-icon>
+            About Us
+          </a>
+        </li>
+        <div class="headerLine"></div>
+        <li class="nav-item dropdown bg-custom">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <ion-icon name="book" class="headerIcons"></ion-icon>
+            Category
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#">Bar</a>
+            <a class="dropdown-item" href="#">Club</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+<main>
+  <div class="clubOfTheWeek" id="placeOfTheWeek">
+    <h1>Bar of the Week</h1>
+        <label id="nameOfCOTW"></label>
+        <div class="circle">
+          <div class="arrow"></div>
+        </div>
+      <div class="scrollDown">
+          <a id="exploreMoreText" href="#otherBars">explore more</a>
+            <ion-icon name="chevron-down" id="scrollDownIcon"></ion-icon>
+      </div>
+    </div>
+</main>
+<div>
+  <h2 id="otherBars">Other Bars</h2>
+  <div class="otherClubsContainer" id="otherClubsContainerID">
+    <div id="batches">
+    </div>
+  </div>
+</div>
+<footer>
+  <div class="mobile_footer">
+    <ul class="footer_list">
+      <li id="footer_logo1"><img src="images/logos/concique_logo_blue.png" alt="Concique_Logo" id="footer_logo2">
+      </li>
+      <li class="footerElement">
+        <a href="https://instagram.com/concique" class="footer_icons" target="_blank">
+          <ion-icon name="logo-instagram"></ion-icon>
+        </a>
+        <a href="#" class="footer_icons">
+          <ion-icon name="logo-facebook"></ion-icon>
+        </a>
+        <a href="#" class="footer_icons">
+          <ion-icon name="mail-outline"></ion-icon>
+        </a>
+      </li>
+      <li class="footerElement"><a href="exploreBar.html" class="footer_options">Explore</a></li>
+      <li class="footerElement"><a href="search.html" class="footer_options">Search</a></li>
+      <li class="footerElement"><a href="about_us.html" class="footer_options">About Us</a></li>
+      <li id="copyright">&#169; Concique 2022</li>
+    </ul>
+  </div>
+</footer>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</div>
+</html>
