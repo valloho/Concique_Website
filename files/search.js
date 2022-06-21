@@ -304,7 +304,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         console.log(tag);
 
         // Fetch Events
-        const response = await fetch(`/api/events`);
+        const response = await fetch(`/api/clubEvents`);
 
         if (!response.ok) {
 
