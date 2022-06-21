@@ -3,49 +3,63 @@
 :root {
     --dark-color: #09262F;
     --bright-color: #A7BFD5;
+    --shadow-color: #071e26;
 }
 
 * {
-    margin: 5px;
+    margin: 0;
     padding: 0;
     font-family: 'Darker Grotesque', sans-serif;
     background-color: var(--dark-color);
-    color: var(--bright-color);
+    color: var(--bright-color);!important;
 }
 
 body {
     width: 100%;
     height: 100%;
     text-align: center;
-    padding-top: 2em;
-    font-size: 45px;
 }
 
-#username, #password, #login_button {
+h1 {
+    white-space: nowrap;
+}
+
+.form-popup {
+    font-size: 1.1em;
+    border: 1px solid var(--bright-color);
+    border-radius: 3em;
+    box-shadow: 0 -10px 40px var(--shadow-color);
+    padding: 2em;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+input {
+    font-weight: 300;
+    padding-left: 0.5em;
+}
+
+label {
+    font-weight: 400;
+}
+
+#login_button {
+    font-weight: 500;
+    font-size: 1.1em;
+}
+
+#username, #password, #login_button, .btn {
     border-color: var(--bright-color);
-    font-size: 50px;
+    color: var(--bright-color);
 }
 
 #login {
-    padding-top: 4em;
-    font-size: 50px;
+    padding-top: 2em;
+
 }
 
-@media (max-width: 800px) {
-    body {
-        font-size: 40px;
-        padding-top: 1em;
-    }
+@media (min-width: 400px) {
 
-    h1 {
-        font-size: 40px;
-    }
-
-    #username, #password, #login_button {
-        font-size: 20px;
-    }
-
-    #login {
-        padding-top: 2em;
-    }
 }
