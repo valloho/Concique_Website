@@ -127,7 +127,9 @@ class SearchPage {
     }
 
     // Filter locations
-    addFilteredEvents(events, location, date, tag) {
+    filterEvents(events, location, date, tag) {
+
+        let eventList = [];
 
         for (const event of events) {
 
@@ -174,7 +176,20 @@ class SearchPage {
             }
 
             // Add Event
-            this.addEventToDOM(event);
+            console.log(event);
+            eventList.push(event);
+        }
+
+        return eventList;
+    }
+
+    // Kill Alerts
+    deleteAlerts() {
+        let alerts = document.getElementsByClassName("alert");
+
+        while (alerts.length > 0) {
+
+            alerts[0].remove();
         }
     }
 }
@@ -202,7 +217,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
         "wineBar"
     ]
 
-
     let events = [
 
         new Event(
@@ -224,7 +238,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
             "District 4",
             ["2022-06-24", "2022-06-25", "2022-06-26"],
             ["nightClub", "danceClub", "karaokeClub"]
-
         ),
         new Event(
             "MidlifeCrisisClub",
@@ -235,6 +248,26 @@ document.addEventListener("DOMContentLoaded", function (event) {
             "District 5",
             ["2022-06-22", "2022-06-24"],
             ["karaokeClub"]
+        ),
+        new Event(
+            "LetsKillJavascript",
+            "images/landingpage_bar.jpg",
+            4,
+            187,
+            666,
+            "District 5",
+            ["2022-06-24"],
+            ["nightClub"]
+        ),
+        new Event(
+            "CallMedicalAssistance",
+            "images/landingpage_bar.jpg",
+            4,
+            187,
+            666,
+            "District 5",
+            ["2022-06-24"],
+            ["sportsClub"]
         )
     ]
 
@@ -245,11 +278,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
     searchPage.addEventTags(clubTags);
 
     let form = document.getElementById("inputForm");
+    let eventList = [];
 
     form.addEventListener("submit", function (e) {
 
         e.preventDefault();
+        searchPage.deleteAlerts();
 
+        // Delete existing articles
         let articles = document.getElementsByTagName("article");
 
         while (articles.length > 0) {
@@ -257,6 +293,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             articles[0].remove();
         }
 
+        // Get user input
         let location = document.getElementById("where").value;
         console.log(location);
         let date = document.querySelector('input[type="date"]').value;
@@ -264,7 +301,54 @@ document.addEventListener("DOMContentLoaded", function (event) {
         let tag = document.getElementById("what").value;
         console.log(tag);
 
-        searchPage.addFilteredEvents(events, location, date, tag);
+        // Filter events
+        eventList = searchPage.filterEvents(events, location, date, tag);
+
+        // Add 2 events
+        let itemsCount = eventList.length < 2 ? eventList.length : 2;
+
+        for (let i = 0; i < itemsCount; i++) {
+
+            searchPage.addEventToDOM(eventList[0]);
+            eventList.shift();
+        }
+        // searchPage.addEvents(eventList);
+
+        // Scroll to results
         document.getElementById("results").scrollIntoView();
+    })
+
+    let loadMore = document.getElementById("loadMoreButton");
+
+    loadMore.addEventListener("click", function (e){
+
+        e.preventDefault();
+
+        searchPage.deleteAlerts();
+        console.log("Load More");
+        let itemsCount = eventList.length < 2 ? eventList.length : 2;
+
+        for (let i = 0; i < itemsCount; i++) {
+
+            searchPage.addEventToDOM(eventList[0]);
+            eventList.shift();
+        }
+
+        if (itemsCount <= 0) {
+
+            let alertContainer = document.createElement("div");
+            alertContainer.setAttribute("class", "alert alert-primary");
+            alertContainer.setAttribute("role", "alert");
+            alertContainer.append("There are no more Clubs to load !");
+
+            document.getElementById("loadMore").append(alertContainer);
+            console.log("Help");
+        }
+
+        /*
+        <div class="alert alert-warning" role="alert">
+            This is a warning alert—check it out!
+        </div
+         */
     })
 });
