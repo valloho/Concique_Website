@@ -18,11 +18,17 @@ body {
     padding: 0;
 }
 
-img {
+.logo_img {
+
+    background-color: transparent;
 }
 
 .carousel-control-prev, .carousel-control-next {
-    box-shadow: rgba(0, 0, 0, 0.45) 0 -5px 15px 0;
+}
+
+.carousel-indicators {
+
+    background-color: transparent;
 }
 
 .containerino {
@@ -75,12 +81,13 @@ img {
     justify-self: center;
     align-self: stretch;
     background-color: var(--main-color);
-    border-top-right-radius: 4em;
-    border-top-left-radius: 4em;
+    border-top-right-radius: 4em !important;
+    border-top-left-radius: 4em !important;
     box-shadow: rgba(0, 0, 0, 0.45) 0 -5px 15px 0;
 }
 
 .landingpage_title {
+    background-color: transparent;
     text-align: center;
     font-weight: 300;
     font-size: 50px;
