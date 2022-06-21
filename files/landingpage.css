@@ -44,7 +44,7 @@ body {
 .image_content {
     grid-area: img;
     position: relative;
-    max-width: 25em;
+    width: 100%;
     justify-self: center;
     box-shadow: rgba(0, 0, 0, 0.45) 0 -5px 15px 0;
 }
@@ -60,24 +60,22 @@ body {
 .shadowbox {
     position: absolute;
     width: 100%;
-    max-width: 25em;
     height: 40%;
     background: linear-gradient(rgba(0,0,0,0.8), transparent);
     z-index: 1;
 }
 .logo_img{
     position: absolute;
-    width: 20%;
-    max-width: 25em;
+    width: 5em;
     top: 3%;
-    left: 40%;
+    left: 50%;
+    transform: translate(-50%);
     z-index: 2;
 }
 .navigation { /*border radius top right (<300px screen size)??*/
     grid-area: navarea;
     position: relative;
     width: 100%;
-    max-width: 25em;
     justify-self: center;
     align-self: stretch;
     background-color: var(--main-color);
