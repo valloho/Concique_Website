@@ -1,6 +1,6 @@
 class Event {
 
-    constructor(name, image, id, likes, views, location, date, tag) {
+    constructor(name, image, id, likes, views, location, dates, tags) {
 
         this.name = name;
         this.image = image;
@@ -8,8 +8,8 @@ class Event {
         this.likes = likes;
         this.views = views;
         this.location = location;
-        this.date = date;
-        this.tag = tag;
+        this.dates = dates;
+        this.tags = tags;
     }
 }
 
@@ -127,17 +127,69 @@ class SearchPage {
     }
 
     // Filter locations
-    addFilteredEvents(eventType, events, location, date, tag) {
+    filterEvents(events, location, date, tag) {
+
+        let eventList = [];
 
         for (const event of events) {
 
-            if (location === "All locations" || event.location === location &&
-                event.date === date &&
-                tag === ("Any " + eventType) || event.tag === tag) {
+            console.log("EVENT " + event.name);
 
-                this.addEventToDOM(event);
-                console.log(event.date + " === " + date);
+            // Check location
+            if ((location !== "All locations" && event.location !== location)) {
+
+                continue;
             }
+
+            // Check dates
+            let correctDate = false;
+
+            for (let i = 0; i < event.dates.length; i++) {
+
+                if (event.dates[i] === date) {
+
+                    correctDate = true;
+                    break;
+                }
+            }
+
+            if (!correctDate) {
+
+                continue;
+            }
+
+            // Check tags
+            let correctTag = false;
+
+            for (let i = 0; i < event.tags.length; i++) {
+
+                if (event.tags[i] === tag) {
+
+                    correctTag = true;
+                    break;
+                }
+            }
+
+            if (!correctTag && tag !== "Any Club") {
+
+                continue;
+            }
+
+            // Add Event
+            console.log(event);
+            eventList.push(event);
+        }
+
+        return eventList;
+    }
+
+    // Kill Alerts
+    deleteAlerts() {
+        let alerts = document.getElementsByClassName("alert");
+
+        while (alerts.length > 0) {
+
+            alerts[0].remove();
         }
     }
 }
@@ -153,7 +205,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
         "nightClub",
         "danceClub",
         "karaokeClub",
-        "adultClub"
+        "adultClub",
+        "sportsClub"
     ]
 
     const barTags = [
@@ -164,25 +217,83 @@ document.addEventListener("DOMContentLoaded", function (event) {
         "wineBar"
     ]
 
-
     let events = [
 
-        new Event("Event2", "images/EventTest2.png", 2, 43, 312, "District 1", "2022-06-20", clubTags[1]),
-        new Event("Event3", "images/EventTest3.png", 3, 69, 420, "District 2", "2022-09-24", clubTags[0]),
-        new Event("Event4", "images/landingpage_bar.jpg", 4, 187, 666, "District 5", "2022-07-14", clubTags[3])
+        new Event(
+            "SportBoys",
+            "images/EventTest2.png",
+            2,
+            43,
+            312,
+            "District 1",
+            ["2022-06-22", "2022-06-23", "2022-06-24", "2022-06-25", "2022-06-28", "2022-06-29", "2022-06-30"],
+            ["nightClub", "sportsClub"]
+        ),
+        new Event(
+            "SingAndSwing",
+            "images/EventTest3.png",
+            3,
+            69,
+            420,
+            "District 4",
+            ["2022-06-24", "2022-06-25", "2022-06-26"],
+            ["nightClub", "danceClub", "karaokeClub"]
+        ),
+        new Event(
+            "MidlifeCrisisClub",
+            "images/landingpage_bar.jpg",
+            4,
+            187,
+            666,
+            "District 5",
+            ["2022-06-22", "2022-06-24"],
+            ["karaokeClub"]
+        ),
+        new Event(
+            "LetsKillJavascript",
+            "images/landingpage_bar.jpg",
+            4,
+            187,
+            666,
+            "District 5",
+            ["2022-06-24"],
+            ["nightClub"]
+        ),
+        new Event(
+            "CallMedicalAssistance",
+            "images/landingpage_bar.jpg",
+            4,
+            187,
+            666,
+            "District 5",
+            ["2022-06-24"],
+            ["sportsClub"]
+        )
     ]
 
+    console.log(clubTags[1]);
     let searchPage = new SearchPage();
     searchPage.addEventType(eventType);
     searchPage.addEventLocations(eventLocations);
     searchPage.addEventTags(clubTags);
 
     let form = document.getElementById("inputForm");
+    let eventList = [];
 
     form.addEventListener("submit", function (e) {
 
         e.preventDefault();
-        document.querySelector("article")?.remove();
+        searchPage.deleteAlerts();
+
+        // Delete existing articles
+        let articles = document.getElementsByTagName("article");
+
+        while (articles.length > 0) {
+
+            articles[0].remove();
+        }
+
+        // Get user input
         let location = document.getElementById("where").value;
         console.log(location);
         let date = document.querySelector('input[type="date"]').value;
@@ -190,7 +301,54 @@ document.addEventListener("DOMContentLoaded", function (event) {
         let tag = document.getElementById("what").value;
         console.log(tag);
 
-        searchPage.addFilteredEvents(eventType, events, location, date, tag)
+        // Filter events
+        eventList = searchPage.filterEvents(events, location, date, tag);
+
+        // Add 2 events
+        let itemsCount = eventList.length < 2 ? eventList.length : 2;
+
+        for (let i = 0; i < itemsCount; i++) {
+
+            searchPage.addEventToDOM(eventList[0]);
+            eventList.shift();
+        }
+        // searchPage.addEvents(eventList);
+
+        // Scroll to results
         document.getElementById("results").scrollIntoView();
+    })
+
+    let loadMore = document.getElementById("loadMoreButton");
+
+    loadMore.addEventListener("click", function (e){
+
+        e.preventDefault();
+
+        searchPage.deleteAlerts();
+        console.log("Load More");
+        let itemsCount = eventList.length < 2 ? eventList.length : 2;
+
+        for (let i = 0; i < itemsCount; i++) {
+
+            searchPage.addEventToDOM(eventList[0]);
+            eventList.shift();
+        }
+
+        if (itemsCount <= 0) {
+
+            let alertContainer = document.createElement("div");
+            alertContainer.setAttribute("class", "alert alert-primary");
+            alertContainer.setAttribute("role", "alert");
+            alertContainer.append("There are no more Clubs to load !");
+
+            document.getElementById("loadMore").append(alertContainer);
+            console.log("Help");
+        }
+
+        /*
+        <div class="alert alert-warning" role="alert">
+            This is a warning alert—check it out!
+        </div
+         */
     })
 });

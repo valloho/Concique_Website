@@ -230,6 +230,10 @@ label {
 }
 /*endregion*/
 
+#results {
+    padding-top: 5em;
+}
+
 .pageResult {
     padding-bottom: 1em;
     padding-top: 1em;
@@ -317,6 +321,10 @@ article>button {
 article>button>label {
     font-size: 1em !important;
     font-weight: 600 !important;
+}
+
+#loadMore {
+    margin-bottom: 4em;
 }
 
 #loadMore>p {
