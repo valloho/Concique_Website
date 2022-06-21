@@ -136,14 +136,13 @@ class ClubModel {
 }
 
 const model = new ClubModel();
-const clubOfTheWeeK1 = new ClubOfTheWeek("Praterdome", "images/landingpage_club.jpg",
-    "632", "30000", "2")
-const june23Date = new Date("Thursday, 23 June", "23.6");
-model.addDates(june23Date)
-model.addPlace(june23Date, new Place("Praterdome", "images/landingpage_club.jpg",
+const june25Date = new Date("Saturday, 25 June", "25.6", );
+model.addDates(june25Date);
+model.addPlace(june25Date, new Place("Praterdome", "images/landingpage_club.jpg",
     "632", "30000"));
-model.addPlace(june23Date, new Place("Crazy Brudi", "images/landingpage_club.jpg",
-    "69", "12940"));
+model.addPlace(june25Date, new Place("Volksgarden", "images/landingpage_club.jpg",
+    "578", "2784"));
+model.addPlace(june25Date,new Place("Club bob loves clubbing", "images/landingpage_bar.jpg", "5622", "43"));
 const june24Date = new Date("Friday, 24 June", "24.6");
 model.addDates(june24Date);
 model.addPlace(june24Date, new Place("Praterdome", "images/landingpage_club.jpg",
@@ -152,14 +151,14 @@ model.addPlace(june24Date, new Place("Volksgarden", "images/landingpage_club.jpg
     "578", "2784"));
 model.addPlace(june24Date, new Place("Crazy Brudi", "images/landingpage_club.jpg",
     "69", "12940"));
-const june25Date = new Date("Saturday, 25 June", "25.6", );
-model.addDates(june25Date);
-model.addPlace(june25Date, new Place("Praterdome", "images/landingpage_club.jpg",
+const june23Date = new Date("Thursday, 23 June", "23.6");
+model.addDates(june23Date)
+model.addPlace(june23Date, new Place("Praterdome", "images/landingpage_club.jpg",
     "632", "30000"));
-model.addPlace(june25Date, new Place("Volksgarden", "images/landingpage_club.jpg",
-    "578", "2784"));
-model.addPlace(june25Date,new Place("Club bob loves clubbing", "images/landingpage_bar.jpg", "5622", "43"));
-
+model.addPlace(june23Date, new Place("Crazy Brudi", "images/landingpage_club.jpg",
+    "69", "12940"));
+const clubOfTheWeeK1 = new ClubOfTheWeek("Praterdome", "images/landingpage_club.jpg",
+    "632", "30000", "2")
 model.addClubOfTheWeek(clubOfTheWeeK1);
 
 module.exports = model;
