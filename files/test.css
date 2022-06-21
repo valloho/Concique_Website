@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300;400;500;600;700;800&display=swap');
+
+* { /* CSS Reset */
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    font-family: 'Darker Grotesque', sans-serif;
+    background-color: var(--main-color);
+}
+
+:root {
+    --main-color: #09262F;
+    --bar-color: #F8F26D;
+    --club-color: #A7BFD4;
+    --eventlocation-color: #4BC9A7;
+    --shadow-color: #071e26;
+}
+
+#logo {
+    background: transparent;
+}
+
+ul {
+    background: transparent;
+}
+
+h1 {
+    text-align: center;
+    color: var(--club-color);
+    margin: 2em;
+    padding-bottom: 1em;
+    padding-top: 1em;
+    font-size: 2.5em !important;
+}
+
+.containerino {
+    display: grid;
+    height: 100vh;
+    width: 100vw;
+    grid-template:
+            "header" auto
+            "img" 60%
+            "content" 30%;
+}
+
+header {
+    grid-area: header;
+    height: 10vh;
+}
+
+
+.navbar {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+main {
+    grid-area: img;
+}
+
+li {
+    background: transparent;
+}
+
+.scrollDown {
+    grid-area: content;
+    color: var(--club-color);
+    border-top: 3px solid #294652;
+    border-radius: 3em;
+    background-color: var(--main-color);
+    box-shadow: 0 -30px 40px var(--shadow-color);
+}
+
+#exploreMoreText {
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: var(--club-color);
+    background: transparent;
+    position: absolute;
+    bottom: 4%;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+#scrollDownIcon {
+    grid-area: content;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+    width: 30px;
+    height: 30px;
+    background: transparent;
+}

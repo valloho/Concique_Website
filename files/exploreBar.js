@@ -1,6 +1,7 @@
 class Place {}
 
 class ExplorePage{
+    /*
     addPlaceOfTheWeekToDOM(place){
         let divPOTW = document.createElement("div");
         divPOTW.setAttribute("class", "clubOfTheWeek");
@@ -23,6 +24,8 @@ class ExplorePage{
 
         document.querySelector("#center").append(divPOTW);
     }
+
+     */
 
     addToDOM(date, places) {
         this.addDateToDOM(date);
