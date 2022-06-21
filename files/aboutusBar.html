@@ -2,13 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Concique - Explore Bars</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="exploreBar.css">
+    <title>Concique - About Us</title>
+    <link rel="stylesheet" href="aboutusBar.css">
     <link rel="stylesheet" href="headerBar.css">
     <link rel="stylesheet" href="footerBar.css">
-    <script src="exploreBar.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <!-- Script Source: https://ionic.io/ionicons -->
 </head>
 <body>
 <header id="headerTop">
@@ -25,7 +27,7 @@
             <ul class="navbar-nav">
                 <li class="nav-item active">
 
-                    <a class="nav-link" href="">
+                    <a class="nav-link" href="exploreBar.html">
                         <ion-icon name="eye" class="headerIcons"></ion-icon>
                         Explore
                     </a>
@@ -39,7 +41,7 @@
                 </li>
                 <div class="headerLine"></div>
                 <li class="nav-item">
-                    <a class="nav-link" href="aboutusBar.html">
+                    <a class="nav-link" href="">
                         <ion-icon name="people" class="headerIcons"></ion-icon>
                         About Us
                     </a>
@@ -51,7 +53,7 @@
                         Category
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="">Bar</a>
+                        <a class="dropdown-item" href="exploreBar.html">Bar</a>
                         <a class="dropdown-item" href="exploreClub.html">Club</a>
                     </div>
                 </li>
@@ -59,36 +61,67 @@
         </div>
     </nav>
 </header>
-<main>
-    <div class="clubOfTheWeek" id="placeOfTheWeek">
-        <h1>Bar of the Week</h1>
-        <div id="center"></div>
-        <div class="container" id="container">
-            <div class="center">
-                <label id="nameOfCOTW"></label>
-                <div class="circle">
-                    <div class="arrow"></div>
+
+<main id="main">
+    <section class="mobile_about_us">
+        <p><b>Team Members</b></p>
+        <ul class="members_list">
+            <li>
+                <div class="mobile_list">
+                    <div id="icon_schreier">
+                        <ion-icon name="person-circle-outline"></ion-icon>
+                    </div>
+                    <div id="name_schreier">Nico <br>Schreier</div>
+                    <div id="name_haber">Veronika <br>Schramadei <br> Haber</div>
+                    <div id="icon_haber">
+                        <ion-icon name="person-circle-outline"></ion-icon>
+                    </div>
+                    <div id="icon_schulterer">
+                        <ion-icon name="person-circle-outline"></ion-icon>
+                    </div>
+                    <div id="name_schulterer">Nico <br>Schulterer</div>
+                    <div id="name_schwalm">Valentin <br>Schwalm</div>
+                    <div id="icon_schwalm">
+                        <ion-icon name="person-circle-outline"></ion-icon>
+                    </div>
+                    <div class="mobile_about_text">Concique is made up of 4 people who want to improve your experience in your city
+                        and show you the variety of bars and clubs your city has to offer!
+                    </div>
+                    <!--
+                    <div class="wrapper">
+                        <div class="social_share_wrap">
+                            <div class="ss_wrap ss_wrap_1">
+                                <div class="ss_btn">
+                                    <span class="icon">
+                                        <ion-icon name="share-social"></ion-icon>
+                                    </span>
+                                </div>
+                                <div class="dd_list">
+                                    <ul>
+                                        <li><a href="#" class="facebook">
+                                            <span class="icon">
+                                                <ion-icon name="logo-facebook"></ion-icon>
+                                            </span>
+                                        </a></li>
+                                        <li><a href="#" class="instagram">
+                            <span class="icon">
+                                <ion-icon name="logo-instagram"></ion-icon>
+                            </span>
+                                        </a></li>
+                                        <li><a href="#" class="email">
+                            <span class="icon">
+                                <ion-icon name="mail-outline"></ion-icon>
+                            </span>
+                                        </a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
                 </div>
-            </div>
-            <div class="scrollDown">
-                <div class="center">
-                    <a id="exploreMoreText" href="#otherClubsText">explore more</a>
-                </div>
-                <div class="center">
-                    <a href="#otherClubsText">
-                        <ion-icon name="chevron-down" id="scrollDownIcon"></ion-icon>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="otherClubs">
-        <h2 id="otherClubsText">Other Bars</h2>
-        <div class="otherClubsContainer" id="otherClubsContainerID">
-            <div id="batches">
-            </div>
-        </div>
-    </div>
+            </li>
+        </ul>
+    </section>
 </main>
 
 <footer>
@@ -115,9 +148,7 @@
     </div>
 </footer>
 
-<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="about_us.js"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

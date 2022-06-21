@@ -11,7 +11,7 @@ class BarController {
         res.send(model.getPlaces(req.params.dateNumber));
     }
 
-    getPlace(req, res){
+    getPlace(req, res) {
         const place = model.getPlace(req.params.id);
         if (place) {
             res.send(place);
@@ -50,12 +50,12 @@ class BarController {
 
         const dateString = req.params.dateNumber;
         const place = req.body;
-        try{
+        try {
             const date = model.resolveDate(dateString);
-            if(this.checkPlaceProperties(res, place)){
+            if (this.checkPlaceProperties(res, place)) {
                 res.send(model.createPlace(date, place));
             }
-        }catch (e) {
+        } catch (e) {
             res.status(404).send(`Date ${dateString} does not exist. Place can't be created.`)
         }
     }
@@ -65,7 +65,7 @@ class BarController {
 
         if (!model.getPlace(id)) {
             res.status(404).send(`Place with id ${id} does not exist. Delete is not possible.`)
-        }else{
+        } else {
             model.deletePlace(id);
             res.sendStatus(204);
         }
@@ -84,12 +84,6 @@ class BarController {
             }
         }
     }
-
-
-
-
-
-
 }
 
 module.exports = new BarController();
