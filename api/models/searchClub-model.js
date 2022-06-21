@@ -25,7 +25,7 @@ let events = [
 
     new Event(
         "Praterdome",
-        "images/praterdom.jpg",
+        "images/clubs/praterdom.jpg",
         1,
         43,
         312,
@@ -35,7 +35,7 @@ let events = [
     ),
     new Event(
         "Volksgarten",
-        "images/volksgarten_inside1.jpg",
+        "images/clubs/volksgarten_inside1.jpg",
         2,
         69,
         420,
@@ -45,7 +45,7 @@ let events = [
     ),
     new Event(
         "Loco",
-        "images/loco.jpg",
+        "images/clubs/loco.jpg",
         3,
         187,
         666,
@@ -55,7 +55,7 @@ let events = [
     ),
     new Event(
         "Flex",
-        "images/flex.jpg",
+        "images/clubs/flex.jpg",
         4,
         187,
         666,
@@ -65,7 +65,7 @@ let events = [
     ),
     new Event(
         "Grelle Forelle",
-        "images/grelleforelle.jpg",
+        "images/clubs/grelleforelle.jpg",
         5,
         187,
         666,
