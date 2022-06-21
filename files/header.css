@@ -6,27 +6,27 @@ header {
 }
 
 #logo {
-    margin-top: 0em;
+    margin-top: 0;
     margin-left: 0.5em;
     height: 50px;
 }
 
+.navbar-expand-lg, .navbar-nav {
+    background: transparent; !important;
+    border: none;!important;
+}
+
 .bg-custom, .navbar-custom {
     background-color: #09262F !important;
+}
+.navbar-collapse, .navbar-nav, .nav-item {
+    background-color: transparent !important;
 }
 
 .navbar {
     border-bottom: solid #294652 3px !important;
     border-bottom-left-radius: 3em !important;
     border-bottom-right-radius: 3em !important;
-}
-
-nav {
-    padding: 0;
-}
-
-.dropdown {
-    background-color: transparent; !important;
 }
 
 .navbar-toggler {
@@ -60,7 +60,7 @@ nav {
 }
 
 .middle-bar {
-    margin-top: 0px;
+    margin-top: 0;
 }
 
 /*region Opened*/
