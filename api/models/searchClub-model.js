@@ -24,54 +24,54 @@ class searchClubModel {
 let events = [
 
     new Event(
-        "SportBoys",
-        "images/EventTest2.png",
-        2,
+        "Praterdome",
+        "images/praterdom.jpg",
+        1,
         43,
         312,
-        "District 1",
-        ["2022-06-22", "2022-06-23", "2022-06-24", "2022-06-25", "2022-06-28", "2022-06-29", "2022-06-30"],
-        ["nightClub", "sportsClub"]
+        "District 2",
+        ["2022-06-24", "2022-06-25"],
+        ["nightClub", "party"]
     ),
     new Event(
-        "SingAndSwing",
-        "images/EventTest3.png",
-        3,
+        "Volksgarten",
+        "images/volksgarten_inside1.jpg",
+        2,
         69,
         420,
-        "District 4",
-        ["2022-06-24", "2022-06-25", "2022-06-26"],
-        ["nightClub", "danceClub", "karaokeClub"]
+        "District 1",
+        ["2022-06-23", "2022-06-24", "2022-06-25"],
+        ["nightClub", "danceClub"]
     ),
     new Event(
-        "MidlifeCrisisClub",
-        "images/landingpage_bar.jpg",
-        4,
+        "Loco",
+        "images/loco.jpg",
+        3,
         187,
         666,
-        "District 5",
-        ["2022-06-22", "2022-06-24"],
-        ["karaokeClub"]
-    ),
-    new Event(
-        "LetsKillJavascript",
-        "images/landingpage_bar.jpg",
-        4,
-        187,
-        666,
-        "District 5",
-        ["2022-06-24"],
+        "District 9",
+        ["2022-06-20", "2022-06-21", "2022-06-22", "2022-06-23", "2022-06-24", "2022-06-25", "2022-06-26"],
         ["nightClub"]
     ),
     new Event(
-        "CallMedicalAssistance",
-        "images/landingpage_bar.jpg",
+        "Flex",
+        "images/flex.jpg",
         4,
         187,
         666,
-        "District 5",
-        ["2022-06-24"],
-        ["sportsClub"]
+        "District 1",
+        ["2022-06-23", "2022-06-24"],
+        ["nightClub", "music"]
+    ),
+    new Event(
+        "Grelle Forelle",
+        "images/grelleforelle.jpg",
+        5,
+        187,
+        666,
+        "District 12",
+        ["2022-06-24", "2022-06-25"],
+        ["nightClub", "music", "electronic"]
     )];
 
 
