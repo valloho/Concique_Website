@@ -23,7 +23,7 @@ class BarController {
     checkPlaceProperties(res, place, id) {
         let result = true;
 
-        const mandatoryNames = [...ClubController.REQUIRED];
+        const mandatoryNames = [...BarController.REQUIRED];
 
         if (id) {
             mandatoryNames.push("id");
