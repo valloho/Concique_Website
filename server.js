@@ -25,12 +25,12 @@ app.use('/api', searchBarRouter);
 const cookieParser = require("cookie-parser");
 const sessions = require('express-session');
 
-// creating 24 hours from milliseconds
+// creating 24 hours from milliseconds, sets the cookie expiry time
 const oneDay = 1000 * 60 * 60 * 24;
 
 //session middleware
 app.use(sessions({
-    secret: "thisismysecretkey",
+    secret: "thisismysecretkey", //a random unique string key used to authenticate a session
     saveUninitialized: true,
     cookie: { maxAge: oneDay },
     resave: false
@@ -40,16 +40,20 @@ app.use(sessions({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// cookie parser middleware
+// cookie parser middleware so server can access the necessary option to save, read and access a cookie.
 app.use(cookieParser());
 
-//username and password
+//in a production environment, these credentials are usually saved in a database.
 let username = 'admin'
 let password = 'mypassword'
 
 // a variable to save a session
 let session;
 
+/*
+This will render and serve the HTML form to the client to fill in the login credentials.
+If user is already logged in, he will be redirected to the landing page.
+*/
 app.get('/',(req,res) => {
     session = req.session;
     if(session.userid){ //user is already logged in
@@ -58,17 +62,35 @@ app.get('/',(req,res) => {
         res.sendFile(path.join(__dirname + '/files/login.html'))
 });
 
+/*
+To create a session, the user will submit the credentials.
+The server will verify these credentials received in the request’s body with the username and the password for the existing user.
+*/
 app.post('/user',(req,res) => {
     if(req.body.username === username && req.body.password === password){
+        //if credentials are valid, user will be granted necessary access
+
         session = req.session;
+        //The server will create a temporary user session with a random string
+        //known as a session ID to identify that session.
+        //Server will send a cookie to the client’s browser.
+        //The session ID is going to be placed inside this cookie.
+
         session.userid = req.body.username;
         console.log(req.session)
+        console.log("SessionID: " + req.session.id);
         res.sendFile(path.join(__dirname + '/files/landingpage.html'));
     }
     else {
+        //if credentials invalid, no session will be initialized & this message will be sent:
         res.send('Invalid username or password');
     }
 })
+/*
+When a client sends a request, the server will set a session ID and set the cookie equal to that session ID.
+The cookie is then stored in the set cookie HTTP header in the browser.
+Every time the browser (client) refreshes, the stored cookie will be a part of that request.
+*/
 
 app.listen(port, (error) => {
     if (error) {
@@ -77,14 +99,3 @@ app.listen(port, (error) => {
         console.log(`Server listening at http://localhost:${port}`)
     }
 });
-/*
-function isInViewport(element) {
-    const rect = element.getBoundingClientRect();
-    return (
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
-}
- */

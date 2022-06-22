@@ -30,7 +30,7 @@ class ExplorePage{
         const options = {
             method: 'GET',
             headers: {
-                'X-RapidAPI-Key': 'ee0d812f91msh96ed092006da3b3p1ff48cjsn84643d796aa9',
+                'X-RapidAPI-Key': 'ee0d812f91msh96ed092006da3b3p1ff48cjsn84643d796aa9--',
                 'X-RapidAPI-Host': 'instagram-data1.p.rapidapi.com'
             }
         };
@@ -165,7 +165,7 @@ class ExplorePage{
 
 document.addEventListener("DOMContentLoaded", async function () {
     const explorePage = new ExplorePage();
-    explorePage.addPlaceOfTheWeekToDOM(new PlaceOfTheWeek("Praterdome", "images/landingpage_club.jpg", "", "30000", "1"))
+    explorePage.addPlaceOfTheWeekToDOM(new PlaceOfTheWeek("Praterdome", "images/clubs/praterdom.jpg", "", "30000", "1"))
 
 
     const response = await fetch(`/api/club/dates/`);

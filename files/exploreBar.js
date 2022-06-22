@@ -27,12 +27,12 @@ class ExplorePage{
         const options = {
             method: 'GET',
             headers: {
-                'X-RapidAPI-Key': 'ee0d812f91msh96ed092006da3b3p1ff48cjsn84643d796aa9',
+                'X-RapidAPI-Key': 'ee0d812f91msh96ed092006da3b3p1ff48cjsn84643d796aa9--',
                 'X-RapidAPI-Host': 'instagram-data1.p.rapidapi.com'
             }
         };
 
-        const response = await fetch('https://instagram-data1.p.rapidapi.com/followers?username=loco__bar', options)
+        const response = await fetch('https://instagram-data1.p.rapidapi.com/followers?username=loosbar', options)
         const likesJSON = await response.json();
         const likes = likesJSON['count'];
 
@@ -164,7 +164,7 @@ class ExplorePage{
 
 document.addEventListener("DOMContentLoaded", async function () {
     const explorePage = new ExplorePage();
-    explorePage.addPlaceOfTheWeekToDOM(new PlaceOfTheWeek("Loco", "images/landingpage_bar.jpg", "", "25000", "1"))
+    explorePage.addPlaceOfTheWeekToDOM(new PlaceOfTheWeek("Loos Bar", "images/bars/loos-bar.jpg", "", "12940", "1"))
     const response = await fetch(`/api/bar/dates/`);
     if (!response.ok) {
         throw new Error(`Fetch error, something went wrong. status: ${response.status}`);
