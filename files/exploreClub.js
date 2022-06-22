@@ -13,7 +13,8 @@ class PlaceOfTheWeek{
 }
 
 class ExplorePage{
-
+    //AJAX
+    //Adds PlaceOfTheWeek to the DOM
     async addPlaceOfTheWeekToDOM(place){
         let divPOTW = document.createElement("div");
         divPOTW.setAttribute("class", "clubOfTheWeek");
@@ -35,7 +36,7 @@ class ExplorePage{
             }
         };
 
-
+        //Fetches the follower count of the place of the week
         const response = await fetch('https://instagram-data1.p.rapidapi.com/followers?username=praterdomevienna', options)
         const likesJSON = await response.json();
         const likes = likesJSON['count'];
@@ -78,7 +79,7 @@ class ExplorePage{
 
         document.querySelector("#center").append(divPOTW);
     }
-
+    //Loads the date(s) and places to the DOM
     addToDOM(date, places) {
         this.addDateToDOM(date);
 
@@ -86,7 +87,7 @@ class ExplorePage{
             this.addPlaceToDOM(date, Object.assign(new Place(), place));
         }
     }
-
+    //Adds a date to the DOM
     addDateToDOM(date){
         let newSection = document.createElement("section");
         newSection.setAttribute("id", date.id);
@@ -99,7 +100,7 @@ class ExplorePage{
 
         document.getElementById("batches").append(newSection);
     }
-
+    //Adds a place to the DOM
     addPlaceToDOM(date, place){
         let newPlace = document.createElement("article");
         newPlace.setAttribute("id", place.id);
@@ -163,19 +164,23 @@ class ExplorePage{
 }
 
 
-document.addEventListener("DOMContentLoaded", async function () {
+document.addEventListener("DOMContentLoaded", async function () { //AJAX
     const explorePage = new ExplorePage();
     explorePage.addPlaceOfTheWeekToDOM(new PlaceOfTheWeek("Praterdome", "images/clubs/praterdom.jpg", "", "30000", "1"))
-
-
+    //Fetches the correct dates from the model
     const response = await fetch(`/api/club/dates/`);
     if (!response.ok) {
+        //If the fetch fails and the promise fails. New error is thrown with the status code.
         throw new Error(`Fetch error, something went wrong. status: ${response.status}`);
     }
+    //Response is treated as a .json file and is given to the const dates (which contains the dates now).
     const dates = await response.json();
     for (const date of Array.from(dates).reverse()) {
+        //Fetches the places from the model
         const placesJSON = await fetch(`/api/club/dates/${date.dateNumber}/places`);
+        //placesJSON is treated as a .json file and is given to the const places (which contains the places now).
         const places = await placesJSON.json();
+        //The function addToDOM is called with the params set as the date (based on the for loop) and the places of that date.
         explorePage.addToDOM(date, places);
     }
 

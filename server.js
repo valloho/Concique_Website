@@ -2,18 +2,20 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const express = require('express');
 
+//We create our routes
 const clubRouter = require('./api/routes/club-routes');
 const barRouter = require('./api/routes/bar-routes');
 const searchClubRouter = require('./api/routes/searchClub-routes');
 const searchBarRouter = require('./api/routes/searchBar-routes');
-
+//We use express a web application framework
 const app = express();
+//Select our port 3000
 const port = process.env.PORT ?? 3000;
-
+//Where our static files are located
 app.use(express.static(path.join(__dirname, '/files')));
 
 app.use(bodyParser.urlencoded({ extended: true }));
-
+//bodyParser parses the incoming requests bodies in a middleware (json) before it's handled
 app.use(bodyParser.json());
 app.use('/api', clubRouter);
 app.use('/api', barRouter);
