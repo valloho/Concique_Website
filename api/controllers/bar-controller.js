@@ -12,7 +12,7 @@ class BarController {
     }
 
     getPlace(req, res) {
-        const place = model.getPlace(req.params.id);
+        const place = model.getPlace(+req.params.id);
         if (place) {
             res.send(place);
         } else {
