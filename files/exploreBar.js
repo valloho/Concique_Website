@@ -174,11 +174,10 @@ class ExplorePage{
         document.getElementById(date.id).append(newPlace);
 
 
-        deleteButton.addEventListener("click",  async () => {
-            const id = parseInt(place.id)
+        deleteButton.addEventListener("click",  () => {
             fetch(`/api/bar/places/${place.id}` , {
-                Method: 'DELETE',
-            }).then(res => removePlace(place));
+                method: 'DELETE'})
+                .then(() => removePlace(place));
         });
 
         function removePlace(place){
