@@ -28,7 +28,7 @@ class ExplorePage{
         const options = {
             method: 'GET',
             headers: {
-                'X-RapidAPI-Key': 'b2d2fff5admshbd88ef0aec2f5ebp17c9d3jsna1acb5c76a8f',
+                'X-RapidAPI-Key': 'ee0d812f91msh96ed092006da3b3p1ff48cjsn84643d796aa9--',
                 'X-RapidAPI-Host': 'instagram-data1.p.rapidapi.com'
             }
         };
@@ -113,8 +113,8 @@ class ExplorePage{
         centreDiv3.setAttribute("class", "center");
         let centreDiv4 = document.createElement("div");
         centreDiv4.setAttribute("class", "center");
-        let centreDiv5 = document.createElement("div");
-        centreDiv5.setAttribute("class", "center");
+        let centerDiv5 = document.createElement("div");
+        centerDiv5.setAttribute("class", "center")
 
         newPlace.append(centreDiv1);
 
@@ -161,7 +161,29 @@ class ExplorePage{
         viewsValue.append(place.views);
         iconBorder2.append(viewsValue);
 
+        let deleteButton = document.createElement("button");
+        deleteButton.setAttribute("id", "deleteButton");
+        deleteButton.append("Delete");
+        centerDiv5.append(deleteButton);
+        let putButton = document.createElement("button");
+        putButton.setAttribute("id", "putButton");
+        putButton.append("Update")
+        centerDiv5.append(putButton);
+        newPlace.append(centerDiv5);
+
         document.getElementById(date.id).append(newPlace);
+
+
+        deleteButton.addEventListener("click",  async () => {
+            const id = parseInt(place.id)
+            fetch(`/api/bar/places/${place.id}` , {
+                Method: 'DELETE',
+            }).then(res => removePlace(place));
+        });
+
+        function removePlace(place){
+            document.getElementById(place.id).remove()
+        }
     }
 }
 

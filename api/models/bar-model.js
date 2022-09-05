@@ -75,15 +75,16 @@ class BarModel {
     }
 
     getPlace(id){
-        if (typeof id !== "number") {
-            throw new Error(`The ID must be a number, but it is a ${typeof id}`);
+        const numberID = parseInt(id)
+        if (typeof numberID !== "number") {
+            throw new Error(`The ID must be a number, but it is a ${typeof numberID}`);
         }
 
         let place = null;
 
-        const date = this.getDate(id);
+        const date = this.getDate(numberID);
         if (date) {
-            place = this.places.get(date).get(id);
+            place = this.places.get(date).get(numberID);
         }
         return place;
     }
