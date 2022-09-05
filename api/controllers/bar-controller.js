@@ -61,7 +61,7 @@ class BarController {
     }
 
     deletePlace(req, res) {
-        const id = parseInt(req.params.id);
+        const id = +req.params.id;
 
         if (!model.getPlace(id)) {
             res.status(404).send(`Place with id ${id} does not exist. Delete is not possible.`)

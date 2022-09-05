@@ -234,3 +234,10 @@ article{
     height: 20em;
     padding-bottom: 1em;
 }
+
+button {
+    background-color: orange;
+    width: 5em;
+    height: 5em;
+    padding: 1em;
+}

@@ -113,6 +113,8 @@ class ExplorePage{
         centreDiv3.setAttribute("class", "center");
         let centreDiv4 = document.createElement("div");
         centreDiv4.setAttribute("class", "center");
+        let centerDiv5 = document.createElement("div");
+        centerDiv5.setAttribute("class", "center")
 
         newPlace.append(centreDiv1);
 
@@ -159,7 +161,29 @@ class ExplorePage{
         viewsValue.append(place.views);
         iconBorder2.append(viewsValue);
 
+        let deleteButton = document.createElement("button");
+        deleteButton.setAttribute("id", "deleteButton");
+        deleteButton.append("Delete");
+        centerDiv5.append(deleteButton);
+        let putButton = document.createElement("button");
+        putButton.setAttribute("id", "putButton");
+        putButton.append("Update")
+        centerDiv5.append(putButton);
+        newPlace.append(centerDiv5);
+
         document.getElementById(date.id).append(newPlace);
+
+
+        deleteButton.addEventListener("click",  async () => {
+            const id = parseInt(place.id)
+            fetch(`/api/bar/places/${place.id}` , {
+                Method: 'DELETE',
+            }).then(res => removePlace(place));
+        });
+
+        function removePlace(place){
+            document.getElementById(place.id).remove()
+        }
     }
 }
 

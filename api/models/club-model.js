@@ -22,7 +22,6 @@ class ClubModel {
 
     constructor() {
         this.places = new Map();
-
     }
 
     addDates(date) {
