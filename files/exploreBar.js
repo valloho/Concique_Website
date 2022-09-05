@@ -126,6 +126,7 @@ class ExplorePage{
         newPlace.append(centreDiv2);
         let newLabel = document.createElement("label");
         newLabel.setAttribute("class", "articleText");
+        newLabel.setAttribute("id", place.name)
         newLabel.append(place.name);
         centreDiv2.append(newLabel);
         let arrow = document.createElement("div");
@@ -183,6 +184,20 @@ class ExplorePage{
         function removePlace(place){
             document.getElementById(place.id).remove()
         }
+
+        putButton.addEventListener("click", () => {
+
+            document.getElementById(place.name).innerText = "NewName"
+            place.name = "NewName"
+
+            fetch(`/api/bar/places/${place.id}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-type': 'application/json'
+                },
+                body: JSON.stringify(place)
+                })
+        })
     }
 }
 
